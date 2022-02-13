@@ -51,6 +51,11 @@
         d="M13.125 14L10.3212 11.004L13.125 14ZM11.875 7.00004C11.875 8.50293 11.3153 9.94427 10.319 11.007C9.32272 12.0697 7.97146 12.6667 6.5625 12.6667C5.15354 12.6667 3.80228 12.0697 2.806 11.007C1.80971 9.94427 1.25 8.50293 1.25 7.00004C1.25 5.49715 1.80971 4.05581 2.806 2.9931C3.80228 1.9304 5.15354 1.33337 6.5625 1.33337C7.97146 1.33337 9.32272 1.9304 10.319 2.9931C11.3153 4.05581 11.875 5.49715 11.875 7.00004V7.00004Z"
         stroke-width="2" stroke-linecap="round"/>
   </symbol>
+  <symbol width="17" height="13" viewBox="0 0 17 13" fill="none" xmlns="http://www.w3.org/2000/svg" id="arrow-left">
+    <path d="M16.1738 6.75537H1.17383" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M6.79883 12.3804L1.17383 6.75537L6.79883 1.13037" stroke-width="1" stroke-linecap="round"
+          stroke-linejoin="round"/>
+  </symbol>
 </svg>
 
 <header class="header">
@@ -104,7 +109,7 @@
         </li>
       </ul>
       <p class="nav__user">
-        <img src="uploads/courses/full_size.jpg" alt="Никитина А. О." class="nav__user-avatar" width="60" height="60">
+        <img src="uploads/courses/full_size.jpg" alt="Никитина А. О." class="nav__user-avatar">
         <span class="nav__username">Никитина А. О.</span>
       </p>
       <a href="sign-in.html" class="nav__button-sign">Выйти</a>
@@ -156,6 +161,33 @@
             </button>
           </p>
         </form>
+      </div>
+      <div class="teacher-courses__body">
+
+      </div>
+      <div class="teacher-courses__footer">
+        <p class="teacher-courses__footer-left">
+          Записи с 1 до 4 из 4 записей
+        </p>
+        <div class="teacher-courses__footer-right teacher-courses__pagination pagination">
+          <span class="pagination__item pagination__arrow pagination__arrow--prev disabled">
+            <svg width="17" height="13" viewBox="0 0 17 13" xmlns="http://www.w3.org/2000/svg"
+                 class="pagination__arrow-icon">
+              <use xlink:href="#arrow-left"/>
+            </svg>
+          </span>
+          <span class="pagination__item current">1</span>
+          <span class="pagination__item">2</span>
+          <span class="pagination__item pagination__item--dots">...</span>
+          <span class="pagination__item">9</span>
+          <span class="pagination__item">10</span>
+          <span class="pagination__item pagination__arrow pagination__arrow--next">
+            <svg width="17" height="13" viewBox="0 0 17 13" xmlns="http://www.w3.org/2000/svg"
+                 class="pagination__arrow-icon">
+              <use xlink:href="#arrow-left"/>
+            </svg>
+          </span>
+        </div>
       </div>
     </div>
   </section>
