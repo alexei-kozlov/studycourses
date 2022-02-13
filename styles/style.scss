@@ -1,0 +1,889 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Poly&family=Roboto:wght@400;600;700&display=swap');
+@import "variables";
+@import "slick";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-width: 1000px;
+  font-family: Roboto, Arial, sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.18;
+  color: $main-color-black;
+}
+
+ul, li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #222121;
+}
+
+section {
+  padding: 32px 0 78px;
+  margin: 10px 0;
+  box-shadow: 0 5px 30px 0 $grey-color-light, 0 -5px 30px 0 $grey-color-light;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1650px;
+  padding: 0 54px;
+}
+
+.visually-hidden {
+  position: absolute;
+  clip: rect(0, 0, 0, 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+}
+
+.page-title {
+  padding: 4px 0 2px 10px;
+  margin-bottom: 60px;
+  font-family: Roboto, Arial, sans-serif;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.17;
+  text-align: left;
+  text-transform: uppercase;
+  color: $green-color-dark;
+  border-left: 5px solid $green-color-dark;
+}
+
+.title {
+  max-width: 1650px;
+  padding: 0 54px;
+  font-family: Roboto, Arial, sans-serif;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.17;
+  letter-spacing: 2px;
+  text-align: center;
+  text-transform: uppercase;
+  color: $green-color-light;
+}
+
+.btn {
+  display: inline-block;
+  width: 240px;
+  margin: 0 auto;
+  padding: 10px 0;
+  color: $main-color-white;
+  font-family: Roboto, Arial, sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition-duration: .3s;
+  background: $green-color-light;
+  border-radius: 10px;
+
+  &:hover,
+  &:focus {
+    box-shadow: 3px 3px 6px rgb(0, 0, 0, 0.6), -3px 3px 6px rgb(0, 0, 0, 0.6);
+    opacity: .9;
+    transition-duration: .3s;
+  }
+
+  &:active {
+    box-shadow: none;
+    transition-duration: .3s;
+  }
+}
+
+.text-button {
+  font-family: Roboto, Arial, sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.15;
+  color: $green-color-dark;
+  cursor: pointer;
+  transition-duration: .3s;
+
+  &:hover,
+  &:focus {
+    opacity: .7;
+    transition-duration: .3s;
+  }
+
+  &:active {
+    opacity: .9;
+    transition-duration: .3s;
+  }
+}
+
+.scrollToTop {
+  width: 50px;
+  height: 50px;
+  color: $main-color-white;
+  font-size: 25px;
+  background: $green-color-dark;
+  position: fixed;
+  right: 30px;
+  bottom: 50px;
+  display: none;
+  z-index: 3;
+  border-radius: 50%;
+
+  &__icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 18px;
+    height: 10px;
+    transition-duration: .3s;
+
+    use {
+      fill: $main-color-white;
+    }
+  }
+
+  &:focus,
+  &:hover {
+    opacity: .9;
+    box-shadow: 3px 3px 6px rgb(0, 0, 0, 0.6), -3px 3px 6px rgb(0, 0, 0, 0.6);
+    transition-duration: .3s;
+  }
+
+  &:focus &__icon,
+  &:hover &__icon {
+    transform: translate(-50%, -50%) scale(1.1);
+    transition-duration: .3s;
+  }
+}
+
+// ------ Custom Checkbox/Radiobutton --------
+// ------------ Custom Checkbox --------------
+.form {
+  &__check-label {
+    display: block;
+    position: relative;
+    margin-right: 21px;
+    padding-left: 33px;
+    cursor: pointer;
+    font-size: 18px;
+    color: $main-color-black;
+    user-select: none;
+    white-space: nowrap;
+  }
+
+  &__checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background: $main-color-white;
+    border: 2px solid $green-color-dark;
+    transition-duration: .3s;
+
+    // ----------- Custom Radiobutton -------------
+    &--radiobutton {
+      border-radius: 50%;
+    }
+  }
+
+  &__check-label:hover &__checkbox ~ &__checkmark {
+    background: $grey-color-light;
+    transition-duration: .3s;
+  }
+
+  &__check-label &__checkbox:checked ~ &__checkmark {
+    background: $green-color-dark;
+    transition-duration: .3s;
+  }
+}
+
+// ----------------- Шапка -------------------
+.header {
+  &__top {
+    width: 100%;
+    min-height: 45px;
+    background: $green-color-dark;
+
+    .container {
+      margin: 0 auto;
+      padding: 10px 54px;
+    }
+  }
+
+  &__top-list {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  &__top-item:not(:last-of-type) {
+    margin-right: 105px;
+  }
+
+  &__top-link {
+    width: 100%;
+    height: 100%;
+    font-family: Poly, "Times New Roman", serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    color: $main-color-white;
+    transition-duration: .3s;
+
+    &:hover,
+    &focus {
+      opacity: .8;
+      transition-duration: .3s;
+    }
+  }
+
+  &__top-icon {
+    vertical-align: middle;
+    margin-right: 10px;
+
+    use {
+      fill: $main-color-white;
+    }
+  }
+
+  &__logo {
+    margin: 34px 0;
+    display: block;
+    font-family: Pacifico, Arial, sans-serif;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1;
+    color: $green-color-dark;
+  }
+}
+
+// --------------- Навигация -----------------
+.nav {
+  .container {
+    width: 100%;
+    min-height: 40px;
+    padding: 0 54px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+
+    @media screen and (max-width: 1300px) {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }
+
+  /*&__btn-field {
+    display: none;
+    position: relative;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    background-color: transparent;
+
+    @media screen and (max-width: 700px) {
+      display: block;
+      z-index: 5;
+    }
+  }
+  &__btn-icon,
+  &__btn-icon::before,
+  &__btn-icon::after {
+    display: block;
+    position: absolute;
+    cursor: pointer;
+    z-index: 2;
+    width: 24px;
+    height: 2px;
+    background-color: $secondary-text-color;
+    transition-timing-function: ease-in-out;
+    transition-duration: .7s;
+  }
+  &__btn-icon {
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%);
+
+    &::before,
+    &::after {
+      content: "";
+    }
+
+    &::before {
+      transform: translate(0, -8px);
+    }
+
+    &::after {
+      transform: translate(0, 8px);
+    }
+
+    &--active {
+      transform: translateX(50%) rotate(180deg);
+      background-color: transparent;
+
+      &::before {
+        width: 22px;
+        transform: rotate(-45deg);
+      }
+
+      &::after {
+        width: 22px;
+        transform: rotate(45deg);
+      }
+    }
+  }*/
+
+  &__list {
+    max-width: 918px;
+    min-height: 20px;
+    margin: 34px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @media screen and (max-width: 1200px) {
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    /*@media screen and (max-width: 700px) {
+      display: none;
+      position: fixed;
+      margin: 0;
+      padding: 10px 50px 20px;
+      top: 68px;
+      left: 0;
+      right: 0;
+      width: 100vw;
+      height: calc(100vh - 68px);
+      overflow: auto;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      flex-wrap: nowrap;
+      z-index: 5;
+      background-color: $primary-text-color;
+    }*/
+  }
+
+  &__item {
+    margin: 0 10px;
+  }
+
+  &__menu-link {
+    width: 100%;
+    height: 100%;
+    padding: 12px;
+    display: block;
+    position: relative;
+    font-family: Roboto, Arial, sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.15;
+    letter-spacing: 2px;
+    text-align: center;
+    white-space: pre-line;
+    //white-space: nowrap;
+    color: $main-color-black;
+    transition: all .5s ease;
+
+    &:hover,
+    &:focus {
+      color: $green-color-light;
+      transition: all .5s ease;
+    }
+
+    &:active {
+      opacity: .7;
+      transition-duration: .3s;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 0;
+      height: 4px;
+      background: $green-color-light;
+      transition: all .5s ease;
+
+      .nav__item:hover &,
+      .nav__item:focus & {
+        width: 100%;
+        left: 0;
+        transition: all .5s ease;
+      }
+
+      .nav__item:active & {
+        opacity: .7;
+        transition-duration: .3s;
+      }
+    }
+  }
+
+  &__user {
+    white-space: nowrap;
+    margin: 0 10px;
+  }
+
+  &__user-avatar {
+    width: 60px;
+    height: 60px;
+    margin-right: 20px;
+    border: 3px solid $green-color-dark;
+    border-radius: 50%;
+    object-fit: cover;
+    vertical-align: middle;
+  }
+
+  &__username {
+    font-size: 22px;
+    font-weight: 700;
+    color: $green-color-dark;
+    white-space: nowrap;
+  }
+
+  &__button-sign {
+    width: 140px;
+    height: 40px;
+    margin: 34px 0;
+    padding: 9px 32px;
+    border-radius: 20px;
+    font-family: Roboto, Arial, sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.15;
+    letter-spacing: 2px;
+    text-align: center;
+    color: $main-color-white;
+    background: $green-color-dark;
+
+    &:focus,
+    &:hover {
+      box-shadow: 3px 3px 6px rgb(0, 0, 0, 0.6), -3px 3px 6px rgb(0, 0, 0, 0.6);
+      transition-duration: .3s;
+    }
+
+    &:active {
+      opacity: .8;
+      box-shadow: none;
+      transition-duration: .3s;
+    }
+  }
+}
+
+// ----------------- Формы -------------------
+.form {
+  &__top,
+  &__middle {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__left-col,
+  &__right-col {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-bottom: 6px;
+  }
+
+  &__label--message {
+    width: 45%;
+  }
+
+  &__textarea-message {
+    width: 100%;
+    min-height: 180px;
+    resize: none;
+  }
+
+  &__label {
+    font-family: Roboto, Arial, sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.17;
+    text-align: left;
+    color: $green-color-dark;
+  }
+
+  &__select,
+  &__input {
+    width: 100%;
+    height: 48px;
+    margin-bottom: 32px;
+    display: block;
+  }
+
+  &__select,
+  &__select option,
+  &__input,
+  &__textarea-message {
+    margin-top: 10px;
+    padding: 5px 15px;
+    border: 2px solid $green-color-dark;
+    background: $main-color-white;
+
+    font-family: Roboto, Arial, sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.17;
+    color: $green-color-light;
+
+    &:focus {
+      outline-color: $green-color-dark;
+    }
+
+    &[disabled] {
+      background: $grey-color-light;
+    }
+  }
+
+  &__middle {
+    margin: 18px auto 42px;
+    align-items: center;
+  }
+
+  &__note,
+  &__upload {
+    width: 45%;
+  }
+
+  &__note {
+    font-size: 14px;
+    font-weight: 700;
+  }
+
+  &__upload {
+    font-family: Roboto, Arial, sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.17;
+
+    &:hover,
+    &:focus {
+      cursor: pointer;
+    }
+  }
+
+  &__upload-icon {
+    vertical-align: bottom;
+
+    use {
+      fill: $green-color-dark;
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  &__bottom-text {
+    font-family: Roboto, Arial, sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.17;
+    margin-right: 10px;
+  }
+
+  &__btn {
+    width: 45%;
+    min-width: 280px;
+    min-height: 48px;
+    margin: 74px 0 0;
+    align-self: flex-end;
+    outline: none;
+    border: none;
+  }
+}
+
+// ----------------- Подвал ------------------
+.footer {
+  .nav .container {
+    justify-content: space-between;
+  }
+
+  &__logo {
+    margin: 34px 0;
+    display: block;
+    font-family: Pacifico, Arial, sans-serif;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1;
+    color: $green-color-dark;
+  }
+
+  &__bottom {
+    width: 100%;
+    min-height: 45px;
+    background: $green-color-dark;
+
+    .container {
+      margin: 0 auto;
+      padding: 10px 54px;
+    }
+  }
+
+  &__bottom-list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  &__bottom-text {
+    font-family: Roboto, Arial, sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.15;
+    letter-spacing: 2px;
+    color: $main-color-white;
+    white-space: nowrap;
+
+    &.copyright {
+      font-size: 16px;
+    }
+  }
+
+  &__bottom-link {
+    width: 100%;
+    height: 100%;
+    font-family: Poly, "Times New Roman", serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.2;
+    color: $main-color-white;
+    transition-duration: .3s;
+    white-space: nowrap;
+
+    &:hover,
+    &focus {
+      opacity: .8;
+      transition-duration: .3s;
+    }
+  }
+
+  &__bottom-icon {
+    vertical-align: middle;
+    margin-right: 10px;
+
+    use {
+      fill: $main-color-white;
+    }
+  }
+}
+
+@import "front-page";
+// -------------- Авторизация ----------------
+.sign-in {
+  &__form {
+    max-width: 535px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .form {
+    &__top {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding-bottom: 6px;
+    }
+
+    &__bottom {
+      width: 100%;
+      justify-content: space-between;
+    }
+
+    &__text-button {
+      display: block;
+      font-family: Roboto, Arial, sans-serif;
+      font-size: 28px;
+      font-weight: 700;
+      line-height: 1.17;
+      color: $green-color-light;
+    }
+
+    &__btn {
+      margin: 47px 0 0;
+      align-self: center;
+    }
+  }
+}
+
+// -------------- Регистрация ----------------
+.sign-up {
+  .form {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    &__user-type {
+      display: flex;
+      justify-content: flex-start;
+      margin-bottom: 36px;
+    }
+
+    &__radio-label:not(:first-of-type) {
+      margin-left: 120px;
+    }
+
+    &__top {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+
+      @media screen and (max-width: 768px) {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+      }
+    }
+
+    &__left-col,
+    &__right-col {
+      max-width: 535px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding-bottom: 6px;
+
+      @media screen and (max-width: 768px) {
+        width: 80%;
+      }
+    }
+
+    &__btn {
+      max-width: 535px;
+      align-self: flex-end;
+    }
+  }
+}
+
+// -----=--------- Мои курсы -----------------
+.teacher-courses {
+  &__header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  &__create-instruction {
+    display: block;
+    white-space: nowrap;
+    margin: 25px 0;
+  }
+
+  &__pdf-icon {
+    fill: $green-color-light;
+    vertical-align: bottom;
+  }
+
+  &__download-icon {
+    fill: $green-color-dark;
+  }
+
+  &__create-text {
+    margin: 0 10px;
+  }
+
+  &__header-right {
+    font-family: Roboto, Arial, sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.17;
+    text-align: right;
+  }
+
+  &__filter-select {
+    height: 18px;
+    padding: 0 10px 2px;
+    color: $grey-color-light;
+    border-radius: 3px;
+    border-color: $green-color-light;
+    font-size: 14px;
+  }
+
+  &__search-label {
+    position: relative;
+    margin: 35px 0 25px;
+  }
+
+  &__search-input {
+    width: 284px;
+    height: 20px;
+    border: 1px solid $green-color-light;
+    border-radius: 3px;
+    outline: none;
+    padding: 4px 20px 4px 10px;
+    line-height: 1;
+
+    &::placeholder {
+      font-size: 14px;
+    }
+  }
+
+  &__search-btn {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    background: transparent;
+    border: none;
+    outline: none;
+
+    &:hover,
+    &:focus {
+      cursor: pointer;
+    }
+  }
+
+  &__search-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    stroke: $green-color-dark;
+  }
+}

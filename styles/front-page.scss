@@ -1,0 +1,374 @@
+@import "variables";
+
+// ---------------- О нас --------------------
+.about {
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    @media screen and (max-width: 600px) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
+  &__text-block {
+    width: 45%;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  &__title {
+    text-align: left;
+    text-transform: none;
+    margin-bottom: 40px;
+  }
+
+  &__text {
+    font-family: Roboto, Arial, sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 28px;
+    letter-spacing: 2px;
+    text-align: left;
+    color: $main-color-black;
+  }
+
+  &__image {
+    width: 50%;
+    height: auto;
+  }
+}
+
+// -------------- Возможности ----------------
+.capabilities {
+  .container {
+    height: 100%;
+    margin-top: 32px;
+    display: flex;
+    justify-content: space-between;
+
+    @media screen and (max-width: 600px) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
+  .capability {
+    width: 45%;
+    padding: 36px 50px 55px 60px;
+    border-radius: 10px;
+    box-shadow: 0 5px 50px 0 $grey-color-light;
+    position: relative;
+
+    font-family: Roboto, Arial, sans-serif;
+    font-style: normal;
+    line-height: 1.17;
+    text-align: left;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    &__title {
+      font-size: 36px;
+      font-weight: 400;
+      letter-spacing: 2px;
+      color: $green-color-dark;
+    }
+
+    &__subtitle {
+      font-size: 24px;
+      font-weight: 400;
+      letter-spacing: 2px;
+      color: $grey-color-dark;
+    }
+
+    &__list {
+      padding-left: 32px;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0;
+      color: $grey-color-dark;
+    }
+
+    &__title,
+    &__subtitle,
+    &__list {
+      margin-bottom: 30px;
+    }
+
+    &__item {
+      position: relative;
+    }
+
+    &__item:not(:last-of-type) {
+      margin-bottom: 20px;
+    }
+
+    &__item::before {
+      content: '';
+      position: absolute;
+      left: -30px;
+      top: calc(50% - 1px);
+      transform: translateY(-50%);
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: $green-color-light;
+    }
+
+    &__avatar {
+      position: absolute;
+      top: 28px;
+      right: 28px;
+    }
+
+    &__btn {
+      display: block;
+      margin: 0 auto;
+    }
+  }
+}
+
+// ----------------- Курсы -------------------
+.courses {
+  .container {
+    margin-top: 32px;
+    overflow: hidden;
+  }
+
+  &__all {
+    max-width: 1375px;
+    margin: 0 auto;
+    padding: 0 16px;
+    display: block;
+    text-align: right;
+  }
+
+  &__slider {
+    width: 100%;
+    margin: 10px auto 0;
+    position: relative;
+
+    .slick-track {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+  }
+
+  &__slider-arrow {
+    z-index: 4;
+    position: absolute;
+
+    use {
+      fill: $green-color-dark;
+    }
+
+    &[aria-disabled="true"] use {
+      fill: $grey-color-light;
+    }
+
+    &.arrow-left {
+      transform: translateY(-50%) rotate(-90deg);
+      top: 50%;
+      left: -50px;
+    }
+
+    &.arrow-right {
+      transform: translateY(50%) rotate(90deg);
+      bottom: 50%;
+      right: -50px;
+    }
+
+    &:hover,
+    &:focus {
+      cursor: pointer;
+    }
+  }
+
+  &__item {
+    max-width: 1375px;
+    min-height: 222px;
+    margin: 0 auto;
+    padding: 16px;
+  }
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    padding: 33px;
+    box-shadow: 0 5px 10px 0 $grey-color-light, 0 -5px 10px 0 $grey-color-light;
+    position: relative;
+
+    &::before {
+      content: '';
+      display: inline-block;
+      position: absolute;
+      left: 15px;
+      top: 0;
+      transform: translateY(-50%);
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: $green-color-dark;
+    }
+  }
+
+  .course {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    &__avatar {
+      width: 130px;
+      height: 100px;
+      margin-right: 70px;
+      border-radius: 30px;
+    }
+
+    &__description {
+      width: 62%;
+      min-height: 156px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      color: $grey-color-dark;
+    }
+
+    &__title {
+      color: $green-color-light;
+      font-family: Roboto, Arial, sans-serif;
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 1.15;
+    }
+
+    &__button {
+      margin-left: 60px;
+    }
+
+    &__btn-block {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      align-items: flex-end;
+    }
+  }
+}
+
+// ----------------- Отзывы ------------------
+.reviews {
+  &__list {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin: 85px auto 38px;
+
+    @media screen and (max-width: 475px) {
+      flex-direction: column;
+    }
+  }
+
+  &__item {
+    width: 30%;
+    padding: 154px 36px 22px;
+    position: relative;
+    box-shadow: 0 5px 50px 0 $grey-color-light;
+
+    @media screen and (max-width: 600px) {
+      width: 100%;
+    }
+  }
+
+  &__avatar {
+    position: absolute;
+    left: 36px;
+    top: -70px;
+    width: 200px;
+    height: 200px;
+    border: 3px solid $green-color-dark;
+    border-radius: 50%;
+
+    @media screen and (max-width: 1250px) {
+      left: 46px;
+    }
+
+    @media screen and (max-width: 550px) {
+      left: 26px;
+    }
+  }
+
+  &__author,
+  &__author-pos {
+    margin-bottom: 18px;
+  }
+
+  &__author {
+    font-family: Roboto, Arial, sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 1.17;
+    letter-spacing: 2px;
+    text-align: left;
+    color: $green-color-dark;
+  }
+
+  &__author-pos,
+  &__text {
+    font-family: Roboto, Arial, sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.17;
+    text-align: left;
+  }
+
+  &__author-pos {
+    color: $grey-color-dark;
+  }
+
+  &__text {
+    color: $main-color-black;
+  }
+
+  &__btn {
+    display: block;
+    width: 540px;
+    margin: 0 auto;
+    padding: 20px 0;
+    font-size: 20px;
+  }
+}
+
+// ------------- Обратная связь --------------
+.feedback {
+  .container {
+    margin-top: 45px;
+  }
+
+  &__form {
+    max-width: 1160px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .form {
+    &__input {
+      margin: 10px 0 0;
+    }
+  }
+}
