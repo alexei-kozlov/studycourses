@@ -976,4 +976,75 @@ section {
       cursor: default;
     }
   }
+
+  &__sort-icon {
+    use {
+      fill: $green-color-light;
+    }
+  }
+
+  &__btn {
+    background: none;
+    border: none;
+    outline: none;
+    transition-duration: .3s;
+
+    &:hover,
+    &:focus {
+      cursor: pointer;
+      filter: invert(.7);
+      transition-duration: .3s;
+    }
+
+    &:active {
+      filter: invert(0);
+      transition-duration: .3s;
+    }
+  }
+
+  &__btn-icon {
+    use {
+      fill: $green-color-dark;
+    }
+  }
+
+  .table-block {
+    max-width: 1290px;
+    margin: 34px auto 90px;
+    border-collapse: collapse;
+
+    tr {
+      margin: 17px auto;
+    }
+
+    tr > td:last-of-type,
+    tr > td:first-of-type {
+      text-align: center;
+    }
+
+    &__header {
+      border-top: 1px solid $green-color-dark;
+      border-bottom: 1px solid $green-color-dark;
+
+
+      th {
+        padding: 18px 16px 14px;
+
+        &:hover,
+        &:focus {
+          cursor: pointer;
+        }
+      }
+    }
+
+    &__body {
+      tr {
+        border: 1px solid $green-color-dark;
+      }
+
+      td {
+        padding: 18px 16px 14px;
+      }
+    }
+  }
 }

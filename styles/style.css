@@ -1388,5 +1388,54 @@ section {
   box-shadow: none;
   cursor: default;
 }
+.teacher-courses__sort-icon use {
+  fill: #128277;
+}
+.teacher-courses__btn {
+  background: none;
+  border: none;
+  outline: none;
+  transition-duration: 0.3s;
+}
+.teacher-courses__btn:hover, .teacher-courses__btn:focus {
+  cursor: pointer;
+  filter: invert(0.7);
+  transition-duration: 0.3s;
+}
+.teacher-courses__btn:active {
+  filter: invert(0);
+  transition-duration: 0.3s;
+}
+.teacher-courses__btn-icon use {
+  fill: #004b47;
+}
+.teacher-courses .table-block {
+  max-width: 1290px;
+  margin: 34px auto 90px;
+  border-collapse: collapse;
+}
+.teacher-courses .table-block tr {
+  margin: 17px auto;
+}
+.teacher-courses .table-block tr > td:last-of-type,
+.teacher-courses .table-block tr > td:first-of-type {
+  text-align: center;
+}
+.teacher-courses .table-block__header {
+  border-top: 1px solid #004b47;
+  border-bottom: 1px solid #004b47;
+}
+.teacher-courses .table-block__header th {
+  padding: 18px 16px 14px;
+}
+.teacher-courses .table-block__header th:hover, .teacher-courses .table-block__header th:focus {
+  cursor: pointer;
+}
+.teacher-courses .table-block__body tr {
+  border: 1px solid #004b47;
+}
+.teacher-courses .table-block__body td {
+  padding: 18px 16px 14px;
+}
 
 /*# sourceMappingURL=style.css.map */
