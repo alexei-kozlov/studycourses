@@ -101,7 +101,7 @@
   <section class="sign-up" id="sign-up">
     <div class="container">
       <h2 class="sign-up__title page-title">Регистрация</h2>
-      <form class="sign-up__form form" method="post" action="javascript:void(0);">
+      <form class="sign-up__form form" method="post">
         <div class="form__user-type">
           <label class="form__check-label form__radio-label form__label">
             <input class="form__checkbox visually-hidden" type="radio" name="user-type" value="Педагог">
@@ -118,11 +118,11 @@
           <div class="form__left-col">
             <label class="form__label">
               *Ф. И. О.
-              <input type="text" class="form__input" required>
+              <input name="name" type="text" class="form__input" required>
             </label>
             <label class="form__label">
               *Страна
-              <select class="form__select" required>
+              <select name="country" class="form__select" required>
                 <option value></option>
                 <option value="country-1">Страна 1</option>
                 <option value="country-2">Страна 2</option>
@@ -130,7 +130,7 @@
             </label>
             <label class="form__label">
               *Область
-              <select class="form__select" required>
+              <select name="region" class="form__select" required>
                 <option value></option>
                 <option value="region-1">Область 1</option>
                 <option value="region-2">Область 2</option>
@@ -138,33 +138,33 @@
             </label>
             <label class="form__label">
               *Город
-              <input type="text" class="form__input" required>
+              <input name="city" type="text" class="form__input" required>
             </label>
             <label class="form__label">
               *Место работы
-              <input type="text" class="form__input" required>
+              <input name="work-place" type="text" class="form__input" required>
             </label>
           </div>
           <div class="form__right-col">
             <label class="form__label">
               *Должность
-              <input type="text" class="form__input" required>
+              <input name="position" type="text" class="form__input" required>
             </label>
             <label class="form__label">
               *E-mail
-              <input type="email" class="form__input" required>
+              <input name="email" type="email" class="form__input" required>
             </label>
             <label class="form__label">
               *Номер телефона
-              <input type="tel" class="form__input" required>
+              <input name="tel" type="tel" class="form__input" required>
             </label>
             <label class="form__label">
               *Пароль
-              <input type="password" class="form__input" required>
+              <input name="password" type="password" class="form__input" required>
             </label>
             <label class="form__label">
               *Повторите пароль
-              <input type="password" class="form__input" required>
+              <input name="confirm-password" type="password" class="form__input" required>
             </label>
           </div>
         </div>
@@ -172,7 +172,7 @@
           <div class="form__left-col">
             <label class="form__label">
               *Есть ли Вам 16 лет?
-              <select class="form__select form__select--question" required>
+              <select name="emancipation" class="form__select form__select--question" required>
                 <option value></option>
                 <option value="yes">Да</option>
                 <option value="no">Нет</option>
@@ -180,11 +180,11 @@
             </label>
             <label class="form__label">
               *Ф. И. О. ученика
-              <input type="text" class="form__input" required>
+              <input name="name" type="text" class="form__input" required>
             </label>
             <label class="form__label">
               *Страна
-              <select class="form__select" required>
+              <select name="country" class="form__select" required>
                 <option value></option>
                 <option value="country-1">Страна 1</option>
                 <option value="country-2">Страна 2</option>
@@ -192,7 +192,7 @@
             </label>
             <label class="form__label">
               *Область
-              <select class="form__select" required>
+              <select name="region" class="form__select" required>
                 <option value></option>
                 <option value="region-1">Область 1</option>
                 <option value="region-2">Область 2</option>
@@ -200,37 +200,37 @@
             </label>
             <label class="form__label">
               *Город
-              <input type="text" class="form__input" required>
+              <input name="city" type="text" class="form__input" required>
             </label>
             <label class="form__label">
               *Образовательная организация
-              <input type="text" class="form__input" required>
+              <input name="edu-organization" type="text" class="form__input" required>
             </label>
           </div>
           <div class="form__right-col">
             <label class="form__label">
               *Ф. И. О. родителя/законного представителя
-              <input type="text" class="form__input form__input--parents" required >
+              <input name="parent-name" type="text" class="form__input form__input--parents" required >
             </label>
             <label class="form__label">
               *Класс обучения
-              <input type="text" class="form__input" required>
+              <input name="class" type="text" class="form__input" required>
             </label>
             <label class="form__label">
               *E-mail
-              <input type="email" class="form__input" required>
+              <input name="email" type="email" class="form__input" required>
             </label>
             <label class="form__label">
               *Номер телефона
-              <input type="tel" class="form__input" required>
+              <input name="tel" type="tel" class="form__input" required>
             </label>
             <label class="form__label">
               *Пароль
-              <input type="password" class="form__input" required>
+              <input name="password" type="password" class="form__input" required>
             </label>
             <label class="form__label">
               *Повторите пароль
-              <input type="password" class="form__input" required>
+              <input name="confirm-password" type="password" class="form__input" required>
             </label>
           </div>
         </div>
@@ -252,7 +252,7 @@
             Телефон
           </label>
         </div>
-        <button type="submit" class="form__btn btn">Зарегистрироваться</button>
+        <button type="submit" class="form__btn btn" value="submit">Зарегистрироваться</button>
       </form>
     </div>
   </section>
