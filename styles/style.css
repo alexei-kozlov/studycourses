@@ -287,7 +287,7 @@ section {
 }
 @media screen and (max-width: 440px) {
   .container {
-    padding: 0 15px;
+    padding: 10px 15px;
   }
 }
 
@@ -457,7 +457,7 @@ section {
 }
 @media screen and (max-width: 440px) {
   .header__top .container {
-    padding: 0 15px;
+    padding: 10px 15px;
   }
 }
 .header__top-list {
@@ -776,6 +776,9 @@ section {
 .form__note, .form__upload {
   width: 45%;
 }
+.form__upload {
+  max-width: 280px;
+}
 .form__note {
   font-size: 14px;
   font-weight: 700;
@@ -915,7 +918,7 @@ section {
 }
 @media screen and (max-width: 600px) {
   .footer__bottom .container {
-    padding: 0 15px;
+    padding: 10px 15px;
   }
 }
 .footer__bottom-list {
@@ -938,6 +941,11 @@ section {
   letter-spacing: 2px;
   color: #f9f8f8;
   white-space: nowrap;
+}
+@media screen and (max-width: 440px) {
+  .footer__bottom-text {
+    white-space: pre-line;
+  }
 }
 .footer__bottom-text.copyright {
   font-size: 16px;
@@ -1578,10 +1586,16 @@ section {
 .teacher-new-course .form__upload {
   display: block;
   margin: 28px 0 60px;
+  max-width: 320px;
 }
 @media screen and (max-width: 1000px) {
   .teacher-new-course .form__upload {
-    width: 100%;
+    width: auto;
+  }
+}
+@media screen and (max-width: 700px) {
+  .teacher-new-course .form__upload {
+    margin-bottom: 28px;
   }
 }
 .teacher-new-course .form__btn-block {
@@ -1589,7 +1603,7 @@ section {
   justify-content: space-between;
   align-items: center;
 }
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 700px) {
   .teacher-new-course .form__btn-block {
     flex-direction: column;
     align-items: center;
@@ -1602,6 +1616,11 @@ section {
 @media screen and (max-width: 1000px) {
   .teacher-new-course .form__btn {
     margin: 30px auto 0;
+  }
+}
+@media screen and (max-width: 700px) {
+  .teacher-new-course .form__btn {
+    width: 100%;
   }
 }
 .teacher-new-course .form__desc {
@@ -1838,5 +1857,25 @@ section {
     }
   }
 }*/
+.teacher-new-theme .form__upload {
+  margin-bottom: 28px;
+}
+.teacher-new-theme .form__left-col, .teacher-new-theme .form__right-col {
+  width: auto;
+}
+@media screen and (max-width: 700px) {
+  .teacher-new-theme .form__left-col, .teacher-new-theme .form__right-col {
+    width: 100%;
+  }
+}
+.teacher-new-theme .form__btn-block {
+  width: 100%;
+}
+@media screen and (max-width: 700px) {
+  .teacher-new-theme .form__btn {
+    width: 100%;
+    min-width: 200px;
+  }
+}
 
 /*# sourceMappingURL=style.css.map */

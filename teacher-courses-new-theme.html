@@ -132,19 +132,19 @@
 <main>
   <h1 class="visually-hidden">StudyCourses - Мои курсы</h1>
 
-  <section class="teacher-new-course teacher-new-module" id="teacher-new-module">
+  <section class="teacher-new-course teacher-new-theme" id="teacher-new-theme">
     <div class="container">
       <h2 class="teacher-new-course__title page-title">Мои курсы</h2>
       <form class="teacher-new-course__form create-course" method="get">
         <div class="form__left-col">
           <label class="form__label form__label--login">
-            *№ модуля
-            <input name="module-num" type="text" class="form__input form__input-course-name" required>
+            *№ темы
+            <input name="theme-num" type="text" class="form__input form__input-course-name" required>
           </label>
         </div>
         <label class="form__label form__label--login">
-          *Наименование модуля
-          <input name="module-name" type="text" class="form__input form__input-course-name" required>
+          *Наименование темы
+          <input name="theme-name" type="text" class="form__input form__input-course-name" required>
         </label>
         <svg xmlns="http://www.w3.org/2000/svg" style="display: none">
           <symbol id="source-icon" width="19" height="19" viewBox="0 0 19 19">
@@ -256,7 +256,7 @@
                 d="M10.875 6.93766V4.37516C10.875 3.46901 10.4975 2.59996 9.82547 1.95921C9.15346 1.31847 8.24203 0.958496 7.29167 0.958496H0.125V18.0418H7.29167C8.24203 18.0418 9.15346 17.6819 9.82547 17.0411C10.4975 16.4004 10.875 15.5313 10.875 14.6252V12.0627C10.875 10.696 9.62083 9.50016 8.1875 9.50016C9.62083 9.50016 10.875 8.30433 10.875 6.93766ZM7.29167 14.6252H3.70833V11.2085H7.29167V14.6252ZM7.29167 7.79183H3.70833V4.37516H7.29167V7.79183Z"/>
           </symbol>
         </svg>
-        <label for="msg" class="form__label">*Описание модуля</label>
+        <label for="msg" class="form__label">*Описание темы</label>
         <div class="form__desc">
           <div class="create-course__btn-block edit-panel">
             <div class="edit-panel__top">
@@ -407,19 +407,27 @@
               </label>
             </div>
           </div>
-          <textarea id="msg" name="module-desc" class="form__textarea form__textarea-course-desc" required></textarea>
+          <textarea id="msg" name="theme-desc" class="form__textarea form__textarea-course-desc" required></textarea>
         </div>
-        <div class="form__top">
-          <div class="form__left-col">
-            <label class="form__label">
-              *Минимальный порог прохождения тестирования
-              <input name="min-threshold" type="text" class="form__input" required>
-            </label>
+        <div class="form__footer create-course__footer">
+          <label class="form__upload">
+            <svg class="form__upload-icon" width="30" height="36" viewBox="0 0 30 36"
+                 xmlns="http://www.w3.org/2000/svg">
+              <use xlink:href="#clip"/>
+            </svg>
+            Загрузить материал
+            <input name="file" class="visually-hidden" type="file">
+          </label>
+          <div class="form__btn-block">
+            <div class="form__left-col">
+              <button type="submit" class="form__btn btn" value="delete">Удалить тему</button>
+              <a href="teacher-courses.html" class="form__btn btn back">Отменить</a>
+            </div>
+            <div class="form__right-col">
+              <button type="submit" class="form__btn btn" value="submit">Добавить тему</button>
+              <button type="submit" class="form__btn btn" value="submit">Сохранить</button>
+            </div>
           </div>
-        </div>
-        <div class="form__btn-block">
-          <a href="teacher-courses.html" class="form__btn btn back">Назад</a>
-          <button type="submit" class="form__btn btn" value="submit">Сохранить</button>
         </div>
       </form>
     </div>

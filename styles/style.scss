@@ -43,7 +43,7 @@ section {
   padding: 0 54px;
 
   @media screen and (max-width: 440px) {
-    padding: 0 15px;
+    padding: 10px 15px;
   }
 }
 
@@ -236,7 +236,7 @@ section {
       padding: 10px 54px;
 
       @media screen and (max-width: 440px) {
-        padding: 0 15px;
+        padding: 10px 15px;
       }
     }
   }
@@ -602,6 +602,10 @@ section {
     width: 45%;
   }
 
+  &__upload {
+    max-width: 280px;
+  }
+
   &__note {
     font-size: 14px;
     font-weight: 700;
@@ -767,7 +771,7 @@ section {
       padding: 10px 54px;
 
       @media screen and (max-width: 600px) {
-        padding: 0 15px;
+        padding: 10px 15px;
       }
     }
   }
@@ -794,6 +798,10 @@ section {
     letter-spacing: 2px;
     color: $main-color-white;
     white-space: nowrap;
+
+    @media screen and (max-width: 440px) {
+      white-space: pre-line;
+    }
 
     &.copyright {
       font-size: 16px;
@@ -1197,9 +1205,14 @@ section {
     &__upload {
       display: block;
       margin: 28px 0 60px;
+      max-width: 320px;
 
       @media screen and (max-width: 1000px) {
-        width: 100%;
+        width: auto;
+      }
+
+      @media screen and (max-width: 700px) {
+        margin-bottom: 28px;
       }
     }
 
@@ -1208,7 +1221,7 @@ section {
       justify-content: space-between;
       align-items: center;
 
-      @media screen and (max-width: 1000px) {
+      @media screen and (max-width: 700px) {
         flex-direction: column;
         align-items: center;
       }
@@ -1220,6 +1233,10 @@ section {
 
       @media screen and (max-width: 1000px) {
         margin: 30px auto 0;
+      }
+
+      @media screen and (max-width: 700px) {
+        width: 100%;
       }
     }
 
@@ -1479,3 +1496,32 @@ section {
     }
   }
 }*/
+
+// -------- Мои курсы (Создать тему) ---------
+.teacher-new-theme {
+  .form {
+    &__upload {
+      margin-bottom: 28px;
+    }
+
+    &__left-col,
+    &__right-col {
+      width: auto;
+
+      @media screen and (max-width: 700px) {
+        width: 100%;
+      }
+    }
+
+    &__btn-block {
+      width: 100%;
+    }
+
+    &__btn {
+      @media screen and (max-width: 700px) {
+        width: 100%;
+        min-width: 200px;
+      }
+    }
+  }
+}
