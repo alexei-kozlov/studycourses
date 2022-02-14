@@ -54,7 +54,6 @@
   });
 
   $(document).ready(function () {
-
     // Смена блоков "Ученик" / "Педагог" при выборе опции радиокнопки
     // (страница "Регистрации")
     let userChecked = function () {
@@ -84,18 +83,23 @@
       }
     });
   })
+
+  // Сортировка таблицы "Курсы" с использованием плагина TableSorter
+  $('.table-block').tablesorter({sortList: [[0, 0]]});
 })(jQuery);
 
+/*
+// Сортировка таблицы "Курсы" с использованием "чистого" JS
 let cellTableValue = (tr, i) => tr.children[i].textContent;
 let toCompare = (i, asc) => (a, b) => ((v1, v2) => v1 !== '' && v2 !== '' && !isNaN(v1) && !isNaN(v2) ? v1 - v2 : v1.toString().localeCompare(v2))(cellTableValue(asc ? a : b, i), cellTableValue(asc ? b : a, i));
 
 document.querySelectorAll('th').forEach(th => th.addEventListener('click', (() => {
-  let table = th.closest('table');
+  let table = th.closest('table').querySelector('tbody');
   Array
-      .from(table.querySelectorAll('tr:nth-child(n+2)'))
+      .from(table.querySelectorAll('tr'))
       .sort(toCompare(
           Array
               .from(th.parentNode.children)
               .indexOf(th), this.asc = !this.asc))
       .forEach(tr => table.appendChild(tr));
-})))
+})))*/
