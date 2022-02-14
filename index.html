@@ -273,9 +273,9 @@
               <input name="email" type="email" class="form__input form__input-email" required>
             </label>
           </div>
-          <label class="form__label form__label--message">
+          <label class="form__label form__label-message">
             *Текст сообщения
-            <textarea name="message" class="form__textarea-message" required></textarea>
+            <textarea name="message" class="form__textarea form__textarea-message" required></textarea>
           </label>
         </div>
         <div class="form__middle">
@@ -286,7 +286,7 @@
               <use xlink:href="#clip"/>
             </svg>
             Прикрепить файл
-            <input class="visually-hidden" type="file">
+            <input name="file" class="visually-hidden" type="file">
           </label>
         </div>
         <div class="form__bottom">
@@ -382,6 +382,7 @@
 </footer>
 
 <script src="js/jquery-3.5.0.min.js" defer></script>
+<script src="js/jquery.tablesorter.js" defer></script>
 <script src="js/slick.min.js" defer></script>
 <script src="js/script.js" defer></script>
 

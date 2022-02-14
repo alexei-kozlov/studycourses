@@ -98,6 +98,10 @@ section {
   background: $green-color-light;
   border-radius: 10px;
 
+  &.back {
+    background: $grey-color-light;
+  }
+
   &:hover,
   &:focus {
     box-shadow: 3px 3px 6px rgb(0, 0, 0, 0.6), -3px 3px 6px rgb(0, 0, 0, 0.6);
@@ -513,11 +517,11 @@ section {
     padding-bottom: 6px;
   }
 
-  &__label--message {
+  &__label-message {
     width: 45%;
   }
 
-  &__textarea-message {
+  &__textarea {
     width: 100%;
     min-height: 180px;
     resize: none;
@@ -544,7 +548,7 @@ section {
   &__select,
   &__select option,
   &__input,
-  &__textarea-message {
+  &__textarea {
     margin-top: 10px;
     padding: 5px 15px;
     border: 2px solid $green-color-dark;
@@ -624,6 +628,91 @@ section {
     align-self: flex-end;
     outline: none;
     border: none;
+  }
+}
+
+// --------------- Пагинация -----------------
+.pagination {
+  max-width: 280px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: $green-color-light;
+  font-size: 16px;
+  font-weight: 700;
+
+  &__arrow {
+    border-color: $green-color-dark;
+    background: $green-color-dark;
+    position: relative;
+
+    &--next .pagination__arrow-icon {
+      transform: translate(-50%, -50%) rotate(180deg);
+    }
+  }
+
+  &__arrow-icon {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    use {
+      stroke: $main-color-white;
+    }
+  }
+
+  &__item {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    margin-left: 12px;
+    border: 1px solid $green-color-light;
+    color: $green-color-light;
+    border-radius: 50%;
+    cursor: pointer;
+    text-align: center;
+    line-height: 1.7;
+
+    &:hover,
+    &:focus {
+      box-shadow: 3px 3px 6px rgba(79, 79, 79, 0.6), -3px 3px 6px rgba(79, 79, 79, 0.6);
+    }
+
+    &:active {
+      box-shadow: none;
+    }
+
+    &.current {
+      border-color: $green-color-dark;
+      background: $green-color-dark;
+      color: $main-color-white;
+
+      &:hover,
+      &:focus {
+        cursor: default;
+        box-shadow: none;
+      }
+    }
+
+    &--dots {
+      width: auto;
+      height: auto;
+      border: none;
+
+      &:hover,
+      &:focus {
+        cursor: default;
+        box-shadow: none;
+      }
+    }
+  }
+
+  .disabled {
+    border-color: $grey-color-light;
+    background: $grey-color-light;
+    box-shadow: none;
+    cursor: default;
   }
 }
 
@@ -800,7 +889,7 @@ section {
   }
 }
 
-// -----=--------- Мои курсы -----------------
+// --------------- Мои курсы -----------------
 .teacher-courses {
   &__header {
     display: flex;
@@ -901,90 +990,6 @@ section {
     display: flex;
     justify-content: space-between;
     align-items: center;
-  }
-
-  .pagination {
-    max-width: 280px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    color: $green-color-light;
-    font-size: 16px;
-    font-weight: 700;
-
-    &__arrow {
-      border-color: $green-color-dark;
-      background: $green-color-dark;
-      position: relative;
-
-      &--next .pagination__arrow-icon {
-        transform: translate(-50%, -50%) rotate(180deg);
-      }
-    }
-
-    &__arrow-icon {
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
-
-      use {
-        stroke: $main-color-white;
-      }
-    }
-
-    &__item {
-      display: inline-block;
-      width: 30px;
-      height: 30px;
-      margin-left: 12px;
-      border: 1px solid $green-color-light;
-      color: $green-color-light;
-      border-radius: 50%;
-      cursor: pointer;
-      text-align: center;
-      line-height: 1.7;
-
-      &:hover,
-      &:focus {
-        box-shadow: 3px 3px 6px rgba(79, 79, 79, 0.6), -3px 3px 6px rgba(79, 79, 79, 0.6);
-      }
-
-      &:active {
-        box-shadow: none;
-      }
-
-      &.current {
-        border-color: $green-color-dark;
-        background: $green-color-dark;
-        color: $main-color-white;
-
-        &:hover,
-        &:focus {
-          cursor: default;
-          box-shadow: none;
-        }
-      }
-
-      &--dots {
-        width: auto;
-        height: auto;
-        border: none;
-
-        &:hover,
-        &:focus {
-          cursor: default;
-          box-shadow: none;
-        }
-      }
-    }
-
-    .disabled {
-      border-color: $grey-color-light;
-      background: $grey-color-light;
-      box-shadow: none;
-      cursor: default;
-    }
   }
 
   .table-block {
@@ -1095,6 +1100,177 @@ section {
     &__btn-icon {
       use {
         fill: $green-color-dark;
+      }
+    }
+  }
+}
+
+// -------- Мои курсы (Создать курс) ---------
+.teacher-courses-new {
+  .form {
+    &__textarea-course-desc {
+      margin: 0;
+      padding: 10px;
+      outline: none;
+      border: none;
+      background: transparent;
+    }
+
+    &__top {
+      display: flex;
+      justify-content: space-between;
+
+      @media screen and (max-width: 600px) {
+        width: 100%;
+        flex-direction: column;
+      }
+    }
+
+    &__left-col,
+    &__right-col {
+      @media screen and (max-width: 600px) {
+        width: 100%;
+      }
+    }
+
+    &__label-price {
+      width: 100%;
+    }
+
+    &__course-cost {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      @media screen and (max-width: 1000px) {
+        flex-wrap: wrap;
+        margin-top: 10px;
+      }
+    }
+
+    &__course-price {
+      @media screen and (max-width: 1000px) {
+        width: 100%;
+      }
+    }
+
+    &__radio-label {
+      margin-bottom: 20px;
+
+      @media screen and (max-width: 1000px) {
+        margin-bottom: 6px;
+      }
+    }
+
+    &__upload {
+      display: block;
+      margin: 28px 0 60px;
+
+      @media screen and (max-width: 1000px) {
+        width: 100%;
+      }
+    }
+
+    &__btn-block {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      @media screen and (max-width: 1000px) {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+
+    &__btn {
+      width: 25%;
+      min-height: 34px;
+
+      @media screen and (max-width: 1000px) {
+        margin: 30px auto 0;
+      }
+    }
+
+    &__desc {
+      box-shadow: 0 4px 10px 0 $grey-color-light;
+      margin: 10px 0 32px;
+    }
+  }
+
+  .edit-panel {
+    width: 100%;
+    height: auto;
+    min-height: 100px;
+    padding: 20px 22px 4px;
+    background: $grey-color-light;
+
+    &__top,
+    &__middle,
+    &__bottom {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    &__btn {
+      min-width: 36px;
+      height: 36px;
+      margin: 4px;
+      border-radius: 5px;
+      border-left: 1px solid $grey-color-dark;
+      border-right: 1px solid $grey-color-dark;
+      border-top: none;
+      border-bottom: none;
+      //border: none;
+      background: none;
+      outline: none;
+      transition-duration: .2s;
+
+      &:hover,
+      &:focus {
+        cursor: pointer;
+        box-shadow: inset 0 0 30px 0 $main-color-white;
+        transition-duration: .2s;
+      }
+
+      &:active {
+        cursor: pointer;
+        box-shadow: inset 0 0 30px 0 $grey-color-light;
+        transition-duration: .2s;
+      }
+    }
+
+    &__source-btn {
+      display: inline-block;
+      width: 88px;
+    }
+
+    &__btn-icon {
+      vertical-align: bottom;
+
+      &[data-color="stroke"] {
+        stroke: $green-color-light;
+      }
+
+      use {
+        fill: $green-color-light;
+      }
+    }
+
+    &__select {
+      width: 127px;
+      height: 27px;
+      margin: 4px;
+      //border: 1px solid $green-color-light;
+      //border-radius: 3px;
+      //color: $green-color-light;
+      border: none;
+      outline: none;
+
+      &:hover,
+      &:focus {
+        cursor: pointer;
       }
     }
   }

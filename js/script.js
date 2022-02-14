@@ -82,6 +82,21 @@
         $('.form__input--parents').removeAttr('disabled').attr('required', true);
       }
     });
+
+    // Отключение/включение поля ввода "Стоимость курса"
+    // в зависимости от выбора радио-кнопки "Платно"/"Бесплатно"
+    let costChecked = function () {
+      let isFreeOption = $('.form__course-cost input[name="course-cost"][value="Бесплатный"]:checked').length,
+          isPayOption = $('.form__course-cost input[name="course-cost"][value="Платный"]:checked').length,
+          inputPrice = $('.form__course-price');
+      if (isFreeOption) {
+        inputPrice.attr('disabled', true).removeAttr('required');
+      } else if (isPayOption) {
+        inputPrice.removeAttr('disabled').attr('required', true);
+      }
+    };
+    costChecked();
+    $('.form__course-cost input[name="course-cost"]').on('click', costChecked);
   })
 
   // Сортировка таблицы "Курсы" с использованием плагина TableSorter
