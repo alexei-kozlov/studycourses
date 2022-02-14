@@ -68,6 +68,7 @@ section {
 .title {
   max-width: 1650px;
   padding: 0 54px;
+  margin: 0 auto;
   font-family: Roboto, Arial, sans-serif;
   font-size: 48px;
   font-style: normal;
@@ -357,7 +358,7 @@ section {
   &__list {
     max-width: 918px;
     min-height: 20px;
-    margin: 34px 0;
+    margin: 34px auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -404,7 +405,6 @@ section {
     letter-spacing: 2px;
     text-align: center;
     white-space: pre-line;
-    //white-space: nowrap;
     color: $main-color-black;
     transition: all .5s ease;
 
@@ -445,7 +445,7 @@ section {
 
   &__user {
     white-space: nowrap;
-    margin: 0 10px;
+    margin: 0 auto;
   }
 
   &__user-avatar {
@@ -468,7 +468,7 @@ section {
   &__button-sign {
     width: 140px;
     height: 40px;
-    margin: 34px 0;
+    margin: 34px auto;
     padding: 9px 32px;
     border-radius: 20px;
     font-family: Roboto, Arial, sans-serif;
@@ -629,10 +629,6 @@ section {
 
 // ----------------- Подвал ------------------
 .footer {
-  .nav .container {
-    justify-content: space-between;
-  }
-
   &__logo {
     margin: 34px 0;
     display: block;
@@ -660,6 +656,12 @@ section {
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
+  }
+
+  &__bottom-item {
+    margin: 0 10px;
+    flex-grow: 1;
+    text-align: center;
   }
 
   &__bottom-text {
@@ -805,6 +807,11 @@ section {
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-end;
+
+    @media screen and (max-width: 980px) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
   }
 
   &__create-instruction {
@@ -832,6 +839,10 @@ section {
     font-weight: 400;
     line-height: 1.17;
     text-align: right;
+
+    @media screen and (max-width: 980px) {
+      text-align: left;
+    }
   }
 
   &__filter-select {
