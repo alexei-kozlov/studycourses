@@ -287,10 +287,9 @@ section {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
 
     @media screen and (max-width: 1300px) {
-      flex-wrap: wrap;
       justify-content: center;
     }
   }
@@ -977,44 +976,14 @@ section {
     }
   }
 
-  &__sort-icon {
-    use {
-      fill: $green-color-light;
-    }
-  }
-
-  &__btn {
-    background: none;
-    border: none;
-    outline: none;
-    transition-duration: .3s;
-
-    &:hover,
-    &:focus {
-      cursor: pointer;
-      filter: invert(.7);
-      transition-duration: .3s;
-    }
-
-    &:active {
-      filter: invert(0);
-      transition-duration: .3s;
-    }
-  }
-
-  &__btn-icon {
-    use {
-      fill: $green-color-dark;
-    }
-  }
-
   .table-block {
-    max-width: 1290px;
+    max-width: 1300px;
     margin: 34px auto 90px;
-    border-collapse: collapse;
+    table-layout: fixed;
+    border-spacing: 0 17px;
 
     tr {
-      margin: 17px auto;
+      text-align: left;
     }
 
     tr > td:last-of-type,
@@ -1022,13 +991,45 @@ section {
       text-align: center;
     }
 
-    &__header {
-      border-top: 1px solid $green-color-dark;
-      border-bottom: 1px solid $green-color-dark;
+    &__sort-icon {
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      margin: 2px 0 0 4px;
+      transition-duration: .3s;
 
+      &.active {
+        transform: translateY(-50%) rotate(180deg);
+        transition-duration: .3s;
+      }
+
+      use {
+        fill: $green-color-light;
+      }
+    }
+
+    &__header {
+      tr {
+        box-shadow: 0 -1px 0 0 $green-color-dark, 0 1px 0 0 $green-color-dark;
+      }
 
       th {
+        font-family: Roboto, Arial, sans-serif;
+        font-size: 18px;
+        font-weight: 400;
+        color: $grey-color-dark;
+
         padding: 18px 16px 14px;
+        position: relative;
+
+        &:nth-of-type(3) {
+          width: 140px;
+        }
+
+        &:nth-of-type(4) {
+          width: 180px;
+        }
 
         &:hover,
         &:focus {
@@ -1039,11 +1040,50 @@ section {
 
     &__body {
       tr {
-        border: 1px solid $green-color-dark;
+        box-shadow: 0 0 0 1px $green-color-dark, 0 5px 50px 0 $grey-color-light;
+
+        td:nth-of-type(2) {
+          padding: 18px 0 14px 16px;
+        }
       }
 
       td {
         padding: 18px 16px 14px;
+
+        font-family: Roboto, Arial, sans-serif;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 1;
+
+        &:nth-of-type(2) {
+          font-weight: 500;
+          color: $green-color-light;
+        }
+      }
+    }
+
+    &__btn {
+      background: none;
+      border: none;
+      outline: none;
+      transition-duration: .3s;
+
+      &:hover,
+      &:focus {
+        cursor: pointer;
+        filter: invert(.7);
+        transition-duration: .3s;
+      }
+
+      &:active {
+        filter: invert(0);
+        transition-duration: .3s;
+      }
+    }
+
+    &__btn-icon {
+      use {
+        fill: $green-color-dark;
       }
     }
   }

@@ -86,6 +86,9 @@
 
   // Сортировка таблицы "Курсы" с использованием плагина TableSorter
   $('.table-block').tablesorter({sortList: [[0, 0]]});
+  $('.table-block__header th').on('click', function () {
+    $(this).find('.table-block__sort-icon').toggleClass('active');
+  })
 })(jQuery);
 
 /*
