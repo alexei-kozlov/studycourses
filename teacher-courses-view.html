@@ -132,10 +132,367 @@
 <main>
   <h1 class="visually-hidden">StudyCourses - Мои курсы</h1>
 
-  <section class="teacher-courses-view" id="teacher-courses">
+  <section class="teacher-courses-view" id="teacher-courses-view">
     <div class="container">
       <h2 class="teacher-courses-view__title page-title">Мои курсы</h2>
+      <div class="teacher-courses-view__block about-course">
+        <div class="teacher-courses-view__tab">
+          <p class="block__title title">О курсе</p>
+          <span class="block__btn btn">Подробнее</span>
+        </div>
+        <form class="teacher-courses-view__info form__info teacher-new-course__form create-course" method="get">
+          <label class="form__label form__label--login">
+            Наименование курса
+            <input name="course-name" type="text" disabled
+                   class="form__input form__input-course-name"
+                   value="Астрономия и космическая физика: преподавание средних наук">
+          </label>
+          <label class="form__label">О курсе
+            <textarea name="course-desc" class="form__textarea form__textarea-course-desc" disabled>
+Курс состоит из:
 
+  • 12 видеолекций
+  • Практические и тестовые задания
+            </textarea>
+          </label>
+          <a href="uploads/Инструкция по созданию курса на площадке.pdf"
+             class="form__course-program teacher-courses__create-instruction text-button" target="_blank">
+            <svg width="26" height="28" viewBox="0 0 26 28" xmlns="http://www.w3.org/2000/svg"
+                 class="teacher-courses__pdf-icon">
+              <use xlink:href="#pdf-icon"/>
+            </svg>
+            <span class="teacher-courses__create-text">Программа курса.pdf</span>
+            <svg width="25" height="21" viewBox="0 0 25 21" xmlns="http://www.w3.org/2000/svg"
+                 class="teacher-courses__download-icon">
+              <use xlink:href="#download-icon"/>
+            </svg>
+          </a>
+          <div class="form__top">
+            <div class="form__left-col">
+              <label class="form__label">
+                Длительность курса
+                <input name="subject" type="text" class="form__input"
+                       disabled
+                       value="5 месяцев">
+              </label>
+            </div>
+            <div class="form__right-col">
+              <label class="form__label form__label-price">
+                Стоимость курса
+                <input name="course-price" type="text"
+                       class="form__input form__course-price"
+                       disabled
+                       value="Бесплатно">
+              </label>
+            </div>
+          </div>
+          <div class="form__footer create-course__footer">
+            <label class="form__check-label form__label">
+              <input class="form__checkbox visually-hidden" type="checkbox" name="public" checked disabled>
+              <span class="form__checkmark"></span>
+              Опубликовать
+            </label>
+            <a href="teacher-courses-new-course.html" class="form__btn btn">Редактировать</a>
+          </div>
+        </form>
+      </div>
+      <div class="teacher-courses-view__block modules">
+        <div class="teacher-courses-view__tab">
+          <p class="block__title title">Модули</p>
+          <span class="block__btn btn">Подробнее</span>
+        </div>
+        <div class="teacher-courses-view__info">
+          <table class="table-block table-modules-block">
+            <thead class="table-block__header">
+            <tr>
+              <th class="table-block__th0">
+                <span class="table-block__header-text"></span>
+              </th>
+              <th class="table-block__th1">
+                <span class="table-block__header-text">№</span>
+              </th>
+              <th class="table-block__th2">
+                <span class="table-block__header-text">Название модуля</span>
+              </th>
+              <th class="table-block__th3">
+                <span class="table-block__header-text">Количество тем</span>
+              </th>
+              <th class="table-block__th4">
+                <span class="table-block__header-text">Количество вопросов</span>
+              </th>
+              <th class="table-block__th5">
+                <span class="table-block__header-text">Действие</span>
+              </th>
+            </tr>
+            </thead>
+            <tbody class="table-block__body">
+            <tr>
+              <td>
+                <span class="table-block__radiobutton"></span>
+              </td>
+              <td>1</td>
+              <td>Введение в курс физики</td>
+              <td>3</td>
+              <td>20</td>
+              <td>
+                <a href="teacher-courses-new-module.html" class="table-block__btn">
+                  <svg class="table-block__btn-icon" width="22" height="19" viewBox="0 0 22 19"
+                       xmlns="http://www.w3.org/2000/svg">
+                    <use xlink:href="#edit-icon"/>
+                  </svg>
+                </a>
+                <button type="button" class="table-block__btn">
+                  <svg class="table-block__btn-icon" width="20" height="19" viewBox="0 0 20 19"
+                       xmlns="http://www.w3.org/2000/svg">
+                    <use xlink:href="#delete-icon"/>
+                  </svg>
+                </button>
+              </td>
+            </tr>
+            <tr class="table-inner">
+              <td colspan="6">
+                <div>
+                  <div class="table-inner__module-themes header">
+                    <h3 class="table-inner__title page-title">
+                      Темы модуля
+                    </h3>
+                    <a href="teacher-courses-new-theme.html" class="table-inner__btn btn">
+                      Добавить темы
+                    </a>
+                  </div>
+                  <div class="table-inner__module-themes body">
+                    <table class="teacher-courses-view__info table-block table-students-block">
+                      <thead class="table-block__header">
+                      <tr>
+                        <th class="table-block__th0">
+                          <span class="table-block__header-text"></span>
+                        </th>
+                        <th class="table-block__th1">
+                          <span class="table-block__header-text">№</span>
+                        </th>
+                        <th class="table-block__th2">
+                          <span class="table-block__header-text">Наименование темы</span>
+                        </th>
+                        <th class="table-block__th5">
+                          <span class="table-block__header-text">Действие</span>
+                        </th>
+                      </tr>
+                      </thead>
+                      <tbody class="table-block__body">
+                      <tr>
+                        <td>
+                          <span class="table-block__radiobutton"></span>
+                        </td>
+                        <td>1</td>
+                        <td>Введение в курс. Основные понятия</td>
+                        <td>
+                          <a href="teacher-courses-new-theme.html" class="table-block__btn">
+                            <svg class="table-block__btn-icon" width="22" height="19" viewBox="0 0 22 19"
+                                 xmlns="http://www.w3.org/2000/svg">
+                              <use xlink:href="#edit-icon"/>
+                            </svg>
+                          </a>
+                          <button type="button" class="table-block__btn">
+                            <svg class="table-block__btn-icon" width="20" height="19" viewBox="0 0 20 19"
+                                 xmlns="http://www.w3.org/2000/svg">
+                              <use xlink:href="#delete-icon"/>
+                            </svg>
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <span class="table-block__radiobutton"></span>
+                        </td>
+                        <td>2</td>
+                        <td>Работа, мощность, энергия</td>
+                        <td>
+                          <a href="teacher-courses-new-theme.html" class="table-block__btn">
+                            <svg class="table-block__btn-icon" width="22" height="19" viewBox="0 0 22 19"
+                                 xmlns="http://www.w3.org/2000/svg">
+                              <use xlink:href="#edit-icon"/>
+                            </svg>
+                          </a>
+                          <button type="button" class="table-block__btn">
+                            <svg class="table-block__btn-icon" width="20" height="19" viewBox="0 0 20 19"
+                                 xmlns="http://www.w3.org/2000/svg">
+                              <use xlink:href="#delete-icon"/>
+                            </svg>
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <span class="table-block__radiobutton"></span>
+                        </td>
+                        <td>3</td>
+                        <td>Основы СТО, атомная и ядерная физика</td>
+                        <td>
+                          <a href="teacher-courses-new-theme.html" class="table-block__btn">
+                            <svg class="table-block__btn-icon" width="22" height="19" viewBox="0 0 22 19"
+                                 xmlns="http://www.w3.org/2000/svg">
+                              <use xlink:href="#edit-icon"/>
+                            </svg>
+                          </a>
+                          <button type="button" class="table-block__btn">
+                            <svg class="table-block__btn-icon" width="20" height="19" viewBox="0 0 20 19"
+                                 xmlns="http://www.w3.org/2000/svg">
+                              <use xlink:href="#delete-icon"/>
+                            </svg>
+                          </button>
+                        </td>
+                      </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <div>
+                  <div class="table-inner__module-questions header">
+                    <h3 class="table-inner__title page-title">
+                      Вопросы модуля
+                    </h3>
+                    <a href="javascript:void(0);" class="table-inner__btn btn">
+                      Добавить вопросы
+                    </a>
+                  </div>
+                  <div class="table-inner__module-questions body">
+                    <table class="teacher-courses-view__info table-block table-students-block">
+                      <thead class="table-block__header">
+                      <tr>
+                        <th class="table-block__th1">
+                          <span class="table-block__header-text">№</span>
+                        </th>
+                        <th class="table-block__th2">
+                          <span class="table-block__header-text">Вопрос</span>
+                        </th>
+                        <th class="table-block__th3">
+                          <span class="table-block__header-text">Максимальный балл</span>
+                        </th>
+                        <th class="table-block__th5">
+                          <span class="table-block__header-text">Действие</span>
+                        </th>
+                      </tr>
+                      </thead>
+                      <tbody class="table-block__body">
+                      <tr>
+                        <td colspan="4">Данные отсутствуют</td>
+                      </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <span class="table-block__radiobutton"></span>
+              </td>
+              <td>2</td>
+              <td>Основные понятия: от ядра до Эйнштейна</td>
+              <td>3</td>
+              <td>15</td>
+              <td>
+                <a href="teacher-courses-new-module.html" class="table-block__btn">
+                  <svg class="table-block__btn-icon" width="22" height="19" viewBox="0 0 22 19"
+                       xmlns="http://www.w3.org/2000/svg">
+                    <use xlink:href="#edit-icon"/>
+                  </svg>
+                </a>
+                <button type="button" class="table-block__btn">
+                  <svg class="table-block__btn-icon" width="20" height="19" viewBox="0 0 20 19"
+                       xmlns="http://www.w3.org/2000/svg">
+                    <use xlink:href="#delete-icon"/>
+                  </svg>
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <span class="table-block__radiobutton"></span>
+              </td>
+              <td>3</td>
+              <td>Основные законы физики и их проявление в нашей жизни</td>
+              <td>3</td>
+              <td>20</td>
+              <td>
+                <a href="teacher-courses-new-module.html" class="table-block__btn">
+                  <svg class="table-block__btn-icon" width="22" height="19" viewBox="0 0 22 19"
+                       xmlns="http://www.w3.org/2000/svg">
+                    <use xlink:href="#edit-icon"/>
+                  </svg>
+                </a>
+                <button type="button" class="table-block__btn">
+                  <svg class="table-block__btn-icon" width="20" height="19" viewBox="0 0 20 19"
+                       xmlns="http://www.w3.org/2000/svg">
+                    <use xlink:href="#delete-icon"/>
+                  </svg>
+                </button>
+              </td>
+            </tr>
+            </tbody>
+          </table>
+          <div class="form__btn-block">
+            <div class="form__left-col">
+              <a href="teacher-courses-new-module.html" class="form__btn btn">Добавить модуль</a>
+              <a href="teacher-courses.html" class="form__btn btn back">Отменить</a>
+            </div>
+            <div class="form__right-col">
+              <div class="teacher-courses__footer-right teacher-courses__pagination pagination">
+          <span class="pagination__item pagination__arrow pagination__arrow--prev disabled">
+            <svg width="17" height="13" viewBox="0 0 17 13" xmlns="http://www.w3.org/2000/svg"
+                 class="pagination__arrow-icon">
+              <use xlink:href="#arrow-left"/>
+            </svg>
+          </span>
+                <span class="pagination__item current">1</span>
+                <span class="pagination__item">2</span>
+                <span class="pagination__item pagination__item--dots">...</span>
+                <span class="pagination__item">9</span>
+                <span class="pagination__item">10</span>
+                <span class="pagination__item pagination__arrow pagination__arrow--next">
+            <svg width="17" height="13" viewBox="0 0 17 13" xmlns="http://www.w3.org/2000/svg"
+                 class="pagination__arrow-icon">
+              <use xlink:href="#arrow-left"/>
+            </svg>
+          </span>
+              </div>
+              <button type="submit" class="form__btn btn" value="submit">Сохранить</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="teacher-courses-view__block students">
+        <div class="teacher-courses-view__tab">
+          <p class="block__title title">Обучающиеся</p>
+          <span class="block__btn btn">Подробнее</span>
+        </div>
+        <table class="teacher-courses-view__info table-block table-students-block">
+          <thead class="table-block__header">
+          <tr>
+            <th class="table-block__th1">
+              <span class="table-block__header-text">№</span>
+            </th>
+            <th class="table-block__th2">
+              <span class="table-block__header-text">Ф.И.О.</span>
+            </th>
+            <th class="table-block__th3">
+              <span class="table-block__header-text">E-mail</span>
+            </th>
+            <th class="table-block__th4">
+              <span class="table-block__header-text">Наименование курса</span>
+            </th>
+            <th class="table-block__th5">
+              <span class="table-block__header-text">Успеваемость</span>
+            </th>
+          </tr>
+          </thead>
+          <tbody class="table-block__body">
+          <tr>
+            <td colspan="5">Данные отсутствуют</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   </section>
 

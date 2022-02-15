@@ -100,12 +100,30 @@
   })
 
   // Сортировка таблицы "Курсы" с использованием плагина TableSorter
-  $('.table-block').tablesorter({sortList: [[0, 0]]});
+  $('.table-sorted').tablesorter({sortList: [[0, 0]]});
   $('.table-block__header th').on('click', function () {
-    $(this).find('.table-block__sort-icon').toggleClass('active');
+    $(this)
+        .find('.table-block__sort-icon')
+        .toggleClass('active');
+  })
+
+  // Показать/скрыть полную информацию о курсе
+  $('.teacher-courses-view__tab .block__btn').on('click', function () {
+    $(this)
+        .closest('.teacher-courses-view__block')
+        .find('.teacher-courses-view__info')
+        .fadeToggle();
+  })
+
+  // Показать/скрыть полную информацию о модуле
+  $('.table-block__radiobutton').on('click', function () {
+    $(this)
+        .toggleClass('active')
+        .closest('tr')
+        .next('.table-inner')
+        .fadeToggle();
   })
 })(jQuery);
-
 /*
 // Сортировка таблицы "Курсы" с использованием "чистого" JS
 let cellTableValue = (tr, i) => tr.children[i].textContent;
