@@ -97,7 +97,7 @@
     };
     costChecked();
     $('.form__course-cost input[name="course-cost"]').on('click', costChecked);
-  })
+  });
 
   // Сортировка таблицы "Курсы" с использованием плагина TableSorter
   $('.table-sorted').tablesorter({sortList: [[0, 0]]});
@@ -105,7 +105,7 @@
     $(this)
         .find('.table-block__sort-icon')
         .toggleClass('active');
-  })
+  });
 
   // Показать/скрыть полную информацию о курсе
   $('.teacher-courses-view__tab .block__btn').on('click', function () {
@@ -113,7 +113,7 @@
         .closest('.teacher-courses-view__block')
         .find('.teacher-courses-view__info')
         .fadeToggle();
-  })
+  });
 
   // Показать/скрыть полную информацию о модуле
   $('.table-block__radiobutton').on('click', function () {
@@ -122,20 +122,5 @@
         .closest('tr')
         .next('.table-inner')
         .fadeToggle();
-  })
+  });
 })(jQuery);
-/*
-// Сортировка таблицы "Курсы" с использованием "чистого" JS
-let cellTableValue = (tr, i) => tr.children[i].textContent;
-let toCompare = (i, asc) => (a, b) => ((v1, v2) => v1 !== '' && v2 !== '' && !isNaN(v1) && !isNaN(v2) ? v1 - v2 : v1.toString().localeCompare(v2))(cellTableValue(asc ? a : b, i), cellTableValue(asc ? b : a, i));
-
-document.querySelectorAll('th').forEach(th => th.addEventListener('click', (() => {
-  let table = th.closest('table').querySelector('tbody');
-  Array
-      .from(table.querySelectorAll('tr'))
-      .sort(toCompare(
-          Array
-              .from(th.parentNode.children)
-              .indexOf(th), this.asc = !this.asc))
-      .forEach(tr => table.appendChild(tr));
-})))*/

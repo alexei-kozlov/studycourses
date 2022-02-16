@@ -153,6 +153,7 @@ section {
   display: none;
   z-index: 3;
   border-radius: 50%;
+  box-shadow: 0 0 6px $main-color-white;
 
   &__icon {
     position: absolute;
@@ -662,6 +663,7 @@ section {
 // --------------- Пагинация -----------------
 .pagination {
   max-width: 280px;
+  margin: 10px 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -941,7 +943,7 @@ section {
 
   &__create-instruction {
     display: block;
-    white-space: nowrap;
+    //white-space: nowrap;
     margin: 25px 0;
   }
 
@@ -1026,6 +1028,12 @@ section {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-top: 15px;
+
+    @media screen and (max-width: 650px) {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
   }
 
   .table-block {
@@ -1042,10 +1050,17 @@ section {
 }
 
 // ---------------- Таблица ------------------
+.table-wrapper {
+  @media screen and (max-width: 768px) {
+    overflow-x: auto;
+    padding: 0 20px;
+  }
+}
+
 .table-block {
   width: 100%;
   max-width: 100%;
-  margin: 34px auto 90px;
+  margin: 34px auto 80px;
   border-spacing: 0 17px;
 
   tr {
@@ -1080,6 +1095,7 @@ section {
   &__header {
     tr {
       box-shadow: 0 -1px 0 0 $green-color-dark, 0 1px 0 0 $green-color-dark;
+      white-space: nowrap;
     }
 
     th {
@@ -1444,6 +1460,11 @@ section {
     padding: 20px;
     margin: 40px auto;
     border: 1px solid $green-color-light;
+
+    @media screen and (max-width: 630px) {
+      flex-direction: column;
+      align-items: center;
+    }
   }
 
   &__info {
@@ -1490,12 +1511,21 @@ section {
       display: flex;
       justify-content: space-between;
       align-items: center;
+
+      @media screen and (max-width: 630px) {
+        flex-direction: column;
+        align-items: stretch;
+      }
     }
 
     &__btn {
       min-height: 34px;
       margin-top: 0;
       margin-bottom: 20px;
+
+      @media screen and (max-width: 630px) {
+        margin-top: 20px;
+      }
     }
 
     &__btn-block {
@@ -1504,8 +1534,35 @@ section {
       align-items: flex-end;
       margin: 40px;
 
+      @media screen and (max-width: 768px) {
+        flex-direction: column;
+      }
+
       .pagination {
         margin-bottom: 20px;
+      }
+
+      .form__left-col {
+        @media screen and (max-width: 700px) {
+          order: 2;
+        }
+      }
+
+      .form__right-col,
+      .form__left-col {
+        width: auto;
+
+        @media screen and (max-width: 700px) {
+          width: 100%;
+          align-items: center;
+        }
+      }
+    }
+
+    &__top {
+      @media screen and (max-width: 630px) {
+        flex-direction: column;
+        align-items: stretch;
       }
     }
 
@@ -1517,7 +1574,12 @@ section {
 
     &__right-col,
     &__left-col {
-      width: auto;
+      width: 45%;
+
+      @media screen and (max-width: 630px) {
+        width: auto;
+      }
+
 
       .btn {
         margin-top: 20px;
@@ -1550,7 +1612,7 @@ section {
       justify-content: space-between;
       align-items: center;
       max-width: 1300px;
-      margin: 0 auto;
+      margin: 0 40px;
     }
 
     &__module-themes .table-block {
