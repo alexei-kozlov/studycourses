@@ -22,13 +22,14 @@ body {
   color: $main-color-black;
 }
 
-ul, li {
+ul,
+li {
   list-style: none;
 }
 
 a {
   text-decoration: none;
-  color: #222121;
+  color: $main-color-black;
 }
 
 section {
@@ -42,7 +43,7 @@ section {
   max-width: 1650px;
   padding: 0 54px;
 
-  @media screen and (max-width: 440px) {
+  @media screen and (max-width: 500px) {
     padding: 10px 15px;
   }
 }
@@ -67,6 +68,10 @@ section {
   text-transform: uppercase;
   color: $green-color-dark;
   border-left: 5px solid $green-color-dark;
+
+  @media screen and (max-width: 700px) {
+    font-size: 28px;
+  }
 }
 
 .title {
@@ -82,6 +87,13 @@ section {
   text-align: center;
   text-transform: uppercase;
   color: $green-color-light;
+
+  @media screen and (max-width: 500px) {
+    font-size: 30px;
+  }
+  @media screen and (max-width: 700px) {
+    padding: 10px 15px;
+  }
 }
 
 .btn {
@@ -204,6 +216,7 @@ section {
     &:focus {
       cursor: pointer;
     }
+
     &:active {
       opacity: .7;
     }
@@ -273,7 +286,6 @@ section {
 }
 
 // ------ Custom Checkbox/Radiobutton --------
-// ------------ Custom Checkbox --------------
 .form {
   &__check-label {
     display: inline-block;
@@ -1154,13 +1166,6 @@ section {
 }
 
 // ---------------- Таблица ------------------
-.table-wrapper {
-  @media screen and (max-width: 768px) {
-    overflow-x: auto;
-    padding: 0 20px;
-  }
-}
-
 .table-block {
   width: 100%;
   max-width: 100%;
@@ -1265,6 +1270,15 @@ section {
     use {
       fill: $green-color-dark;
     }
+  }
+}
+
+// --- Обертка таблицы для прокрутки таблиц---
+// -----------на небольших экранах -----------
+.table-wrapper {
+  @media screen and (max-width: 768px) {
+    overflow-x: auto;
+    padding: 0 20px;
   }
 }
 
