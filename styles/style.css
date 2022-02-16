@@ -378,6 +378,81 @@ section {
   transition-duration: 0.3s;
 }
 
+.modal {
+  display: none;
+}
+.modal__mask {
+  position: fixed;
+  z-index: 3;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  transition: opacity 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modal__container {
+  max-width: 466px;
+  max-height: 253px;
+  margin: 0;
+  background: #f9f8f8;
+  font-family: Roboto, Arial, sans-serif;
+  font-size: 30px;
+  font-weight: 700;
+  color: #004b47;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+.modal__header {
+  position: relative;
+  width: 100%;
+}
+.message-success .modal__header {
+  font-size: 20px;
+  color: #222121;
+  border-bottom: 1px solid #222121;
+  padding: 4px 0 4px 4px;
+}
+.modal__close-btn {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 30px;
+  height: 30px;
+  border: none;
+  outline: none;
+  background: transparent;
+}
+.modal__close-btn:hover, .modal__close-btn:focus {
+  cursor: pointer;
+}
+.modal__close-btn:active {
+  opacity: 0.7;
+}
+.modal__close-btn span {
+  font-size: 30px;
+  font-weight: 500;
+  line-height: 1;
+  color: #222121;
+}
+.modal__body {
+  margin: 30px 20px 0;
+  text-align: center;
+}
+.modal__btn {
+  display: inline-block;
+  outline: none;
+  border: none;
+  margin: 39px 0;
+}
+
 .scrollToTop {
   width: 50px;
   height: 50px;
@@ -445,6 +520,9 @@ section {
 .form__check-label .form__checkbox:checked ~ .form__checkmark {
   background: #004b47;
   transition-duration: 0.3s;
+}
+.validation .form__checkbox:invalid ~ .form__checkmark {
+  border: 2px solid #ff0000;
 }
 
 .header__top {
@@ -826,6 +904,14 @@ section {
   }
 }
 
+.validation input:invalid,
+.validation textarea:invalid,
+.validation select:invalid {
+  border: 2px solid #ff0000;
+  color: #ff0000;
+  background: #f8a3a3;
+}
+
 .pagination {
   max-width: 280px;
   margin: 10px 0;
@@ -996,6 +1082,7 @@ section {
   text-align: left;
   text-transform: none;
   margin-bottom: 40px;
+  padding: 0;
 }
 .about__text {
   font-family: Roboto, Arial, sans-serif;

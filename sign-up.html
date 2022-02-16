@@ -104,12 +104,12 @@
       <form class="sign-up__form form" method="post">
         <div class="form__user-type">
           <label class="form__check-label form__radio-label form__label">
-            <input class="form__checkbox visually-hidden" type="radio" name="user-type" value="Педагог">
+            <input class="form__checkbox visually-hidden" type="radio" name="user-type" value="Педагог" required>
             <span class="form__checkmark form__checkmark--radiobutton"></span>
             Педагог
           </label>
           <label class="form__check-label form__radio-label form__label">
-            <input class="form__checkbox visually-hidden" type="radio" name="user-type" value="Школьник">
+            <input class="form__checkbox visually-hidden" type="radio" name="user-type" value="Школьник" required>
             <span class="form__checkmark form__checkmark--radiobutton"></span>
             Школьник
           </label>
@@ -242,11 +242,50 @@
   </section>
 </main>
 
+<!--Кнопка "Вверх!"-->
 <a href="#" class="scrollToTop">
   <svg xmlns="http://www.w3.org/2000/svg" width="43" height="27" viewBox="0 0 43 27" class="scrollToTop__icon">
     <use xlink:href="#arrow-top"/>
   </svg>
 </a>
+
+<!--Модальное окно "Заполните, пожалуйста, обязательные поля!"-->
+<div class="modal invalid-validation">
+  <div class="modal__mask">
+    <div class="modal__container">
+      <div class="modal__header">
+        <button type="button" class="modal__close-btn">
+          <span>&times;</span>
+        </button>
+      </div>
+      <div class="modal__body">
+        Заполните, пожалуйста, обязательные поля!
+      </div>
+      <div class="modal__footer">
+        <button type="button" class="modal__btn btn">Закрыть</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--Модальное окно "Регистрация прошла успешно!"-->
+<div class="modal registration-success">
+  <div class="modal__mask">
+    <div class="modal__container">
+      <div class="modal__header">
+        <button type="button" class="modal__close-btn">
+          <span>&times;</span>
+        </button>
+      </div>
+      <div class="modal__body">
+        Регистрация прошла успешно!
+      </div>
+      <div class="modal__footer">
+        <button type="button" class="modal__btn btn">Закрыть</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 <footer class="footer">
   <nav class="nav">

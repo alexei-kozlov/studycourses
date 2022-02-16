@@ -121,11 +121,31 @@
   </section>
 </main>
 
+<!--Кнопка "Вверх!"-->
 <a href="#" class="scrollToTop">
   <svg xmlns="http://www.w3.org/2000/svg" width="43" height="27" viewBox="0 0 43 27" class="scrollToTop__icon">
     <use xlink:href="#arrow-top"/>
   </svg>
 </a>
+
+<!--Модальное окно "Заполните, пожалуйста, обязательные поля!"-->
+<div class="modal invalid-validation">
+  <div class="modal__mask">
+    <div class="modal__container">
+      <div class="modal__header">
+        <button type="button" class="modal__close-btn">
+          <span>&times;</span>
+        </button>
+      </div>
+      <div class="modal__body">
+        Заполните, пожалуйста, обязательные поля!
+      </div>
+      <div class="modal__footer">
+        <button type="button" class="modal__btn btn">Закрыть</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 <footer class="footer">
   <nav class="nav">

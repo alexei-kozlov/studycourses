@@ -65,17 +65,25 @@
       teacherForm.css('display', 'none');
       if (studentOption) {
         studentForm.css('display', 'flex');
+        studentForm.find('.form__input').attr('required', true);
+        studentForm.find('.form__select').attr('required', true);
+        teacherForm.find('.form__input').removeAttr('required');
       } else if (teacherOption) {
         teacherForm.css('display', 'flex');
+        teacherForm.find('.form__input').attr('required', true);
+        studentForm.find('.form__input').removeAttr('required');
+        studentForm.find('.form__select').removeAttr('required');
       }
     };
     userChecked();
+
     $('.sign-up__form input[name="user-type"]').on('click', userChecked);
 
     // Отключение/включение поля ввода "Ф. И. О. родителя/законного представителя"
     // в зависимости от выбора опции-ответа "Есть ли Вам 16 лет?"
     $('.form__select--question').change(function () {
       let selectedAnswerValue = $('.form__select--question option:selected').val();
+
       if (selectedAnswerValue === 'yes') {
         $('.form__input--parents').attr('disabled', true).removeAttr('required');
       } else if (selectedAnswerValue === 'no') {
@@ -96,11 +104,13 @@
       }
     };
     costChecked();
+
     $('.form__course-cost input[name="course-cost"]').on('click', costChecked);
   });
 
   // Сортировка таблицы "Курсы" с использованием плагина TableSorter
   $('.table-sorted').tablesorter({sortList: [[0, 0]]});
+
   $('.table-block__header th').on('click', function () {
     $(this)
         .find('.table-block__sort-icon')
@@ -123,4 +133,51 @@
         .next('.table-inner')
         .fadeToggle();
   });
+
+  // Всплытие модального окна если форма не валидна
+  let validateForm = function () {
+    $('.invalid-validation').fadeIn();
+    $(this).closest('form').addClass('validation');
+  };
+
+  $('button[type="submit"]').on('click', validateForm);
+
+  // Всплытие модального окна если форма валидна - сообщение отправлено
+  let sendMsg = function () {
+    $('.message-success').fadeIn();
+  };
+
+  $('.feedback__form').on('submit', function (e) {
+    e.preventDefault();
+    $('.invalid-validation').hide();
+    sendMsg();
+  });
+
+  // Всплытие модального окна если форма валидна - регистрация успешна
+  let regSuccess = function () {
+    $('.registration-success').fadeIn();
+  };
+
+  // Регистрация
+  $('.sign-up__form').on('submit', function (e) {
+    e.preventDefault();
+    $('.invalid-validation').hide();
+    regSuccess();
+  });
+
+  // Авторизация
+  $('.sign-in__form').on('submit', function (e) {
+    e.preventDefault();
+    $('.invalid-validation').hide();
+    window.location.href = 'teacher-courses.html';
+  });
+
+  // Закрытие модального окна
+  let modalClose = function () {
+    $('.modal').fadeOut();
+  };
+
+  $('.modal__close-btn').on('click', modalClose);
+  $('.modal__btn').on('click', modalClose);
+  $('.modal__mask').on('click', modalClose);
 })(jQuery);
