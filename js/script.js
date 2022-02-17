@@ -166,6 +166,13 @@
     window.location.href = 'teacher-courses.html';
   });
 
+  // Создание курса
+  $('.teacher-new-course__form').on('submit', function (e) {
+    e.preventDefault();
+    $('.invalid-validation').hide();
+    window.location.href = 'teacher-courses-view.html';
+  });
+
   // Закрытие модального окна
   let modalClose = function () {
     $('.modal').fadeOut();
