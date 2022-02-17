@@ -25,7 +25,7 @@
     arrows: true,
     prevArrow: '<svg class="courses__slider-arrow arrow-left" xmlns="http://www.w3.org/2000/svg" width="43" height="27" viewBox="0 0 43 27"><use xlink:href="#arrow-top"/></svg>',
     nextArrow: '<svg class="courses__slider-arrow arrow-right" xmlns="http://www.w3.org/2000/svg" width="43" height="27" viewBox="0 0 43 27"><use xlink:href="#arrow-top"/></svg>',
-    autoplay: true,
+    // autoplay: true,
     infinite: true,
     speed: 1000,
     slidesToShow: 2,
@@ -40,12 +40,6 @@
       },
       {
         breakpoint: 768,
-        settings: {
-          slidesToShow: 2,
-        }
-      },
-      {
-        breakpoint: 575,
         settings: {
           slidesToShow: 1,
         }

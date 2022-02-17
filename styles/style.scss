@@ -36,6 +36,13 @@ section {
   padding: 32px 0 78px;
   margin: 10px 0;
   box-shadow: 0 5px 30px 0 $grey-color-light, 0 -5px 30px 0 $grey-color-light;
+
+  @media screen and (max-width: 950px) {
+    padding-bottom: 32px;
+  }
+  @media screen and (max-width: 650px) {
+    padding: 24px 0;
+  }
 }
 
 .container {
@@ -188,6 +195,12 @@ section {
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+
+    @media screen and (max-width: 600px) {
+      font-size: 20px;
+      max-width: 300px;
+      max-height: 200px;
+    }
   }
 
   &__header {
@@ -239,6 +252,10 @@ section {
     outline: none;
     border: none;
     margin: 39px 0;
+
+    @media screen and (max-width: 600px) {
+      margin: 20px 0 10px;
+    }
   }
 }
 
@@ -404,6 +421,13 @@ section {
     font-weight: 400;
     line-height: 1;
     color: $green-color-dark;
+
+    @media screen and (max-width: 1024px) {
+      margin: 20px auto;
+    }
+    @media screen and (max-width: 650px) {
+      margin: 10px auto;
+    }
   }
 }
 
@@ -499,6 +523,12 @@ section {
     @media screen and (max-width: 1200px) {
       justify-content: center;
       flex-wrap: wrap;
+    }
+    @media screen and (max-width: 1024px) {
+      margin: 20px auto;
+    }
+    @media screen and (max-width: 650px) {
+      margin: 10px auto;
     }
     /*@media screen and (max-width: 700px) {
       display: none;
@@ -613,6 +643,13 @@ section {
     text-align: center;
     color: $main-color-white;
     background: $green-color-dark;
+
+    @media screen and (max-width: 1024px) {
+      margin: 20px auto;
+    }
+    @media screen and (max-width: 650px) {
+      margin: 10px auto;
+    }
 
     &:focus,
     &:hover {
@@ -873,6 +910,13 @@ section {
     font-weight: 400;
     line-height: 1;
     color: $green-color-dark;
+
+    @media screen and (max-width: 1024px) {
+      margin: 20px auto;
+    }
+    @media screen and (max-width: 650px) {
+      margin: 10px auto;
+    }
   }
 
   &__bottom {
@@ -984,6 +1028,10 @@ section {
       font-weight: 700;
       line-height: 1.17;
       color: $green-color-light;
+
+      @media screen and (max-width: 768px) {
+        font-size: 20px;
+      }
     }
 
     &__btn {
@@ -1005,10 +1053,19 @@ section {
       display: flex;
       justify-content: flex-start;
       margin-bottom: 36px;
+
+      @media screen and (max-width: 450px) {
+        width: 100%;
+        justify-content: space-between;
+      }
     }
 
     &__radio-label:not(:first-of-type) {
       margin-left: 120px;
+
+      @media screen and (max-width: 450px) {
+        margin: 0;
+      }
     }
 
     &__top {
@@ -1033,6 +1090,9 @@ section {
 
       @media screen and (max-width: 768px) {
         width: 80%;
+      }
+      @media screen and (max-width: 500px) {
+        width: 100%;
       }
     }
 
