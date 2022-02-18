@@ -1304,6 +1304,16 @@ section {
         font-weight: 500;
         color: $green-color-light;
       }
+
+      &:nth-of-type(2) a {
+        font-weight: 500;
+        color: $green-color-light;
+
+        &:hover,
+        &:focus {
+          opacity: .8;
+        }
+      }
     }
   }
 

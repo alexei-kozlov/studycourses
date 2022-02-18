@@ -1951,6 +1951,13 @@ section {
   font-weight: 500;
   color: #128277;
 }
+.table-block__body td:nth-of-type(2) a {
+  font-weight: 500;
+  color: #128277;
+}
+.table-block__body td:nth-of-type(2) a:hover, .table-block__body td:nth-of-type(2) a:focus {
+  opacity: 0.8;
+}
 .table-block__btn {
   background: none;
   border: none;
