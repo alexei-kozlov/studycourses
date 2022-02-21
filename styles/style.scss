@@ -446,13 +446,16 @@ section {
     @media screen and (max-width: 1300px) {
       justify-content: center;
     }
-
+    @media screen and (max-width: 650px) {
+      padding: 20px;
+      justify-content: space-around;
+    }
     @media screen and (max-width: 440px) {
-      padding: 0 15px;
+      padding: 15px;
     }
   }
 
-  /*&__btn-field {
+  &__btn-field {
     display: none;
     position: relative;
     width: 50px;
@@ -460,9 +463,16 @@ section {
     cursor: pointer;
     background-color: transparent;
 
-    @media screen and (max-width: 700px) {
+    @media screen and (max-width: 650px) {
       display: block;
       z-index: 5;
+      order: 3;
+    }
+
+    &--active {
+      position: fixed;
+      top: 20px;
+      right: 20px;
     }
   }
   &__btn-icon,
@@ -474,11 +484,12 @@ section {
     z-index: 2;
     width: 24px;
     height: 2px;
-    background-color: $secondary-text-color;
+    background: $green-color-dark;
     transition-timing-function: ease-in-out;
-    transition-duration: .7s;
+    transition-duration: .3s;
   }
   &__btn-icon {
+    z-index: 4;
     top: 50%;
     right: 50%;
     transform: translate(50%, -50%);
@@ -497,20 +508,22 @@ section {
     }
 
     &--active {
+      background: transparent;
       transform: translateX(50%) rotate(180deg);
-      background-color: transparent;
 
       &::before {
+        background: $main-color-white;
         width: 22px;
         transform: rotate(-45deg);
       }
 
       &::after {
+        background: $main-color-white;
         width: 22px;
         transform: rotate(45deg);
       }
     }
-  }*/
+  }
 
   &__list {
     max-width: 918px;
@@ -528,30 +541,35 @@ section {
       margin: 20px auto;
     }
     @media screen and (max-width: 650px) {
-      margin: 10px auto;
-    }
-    /*@media screen and (max-width: 700px) {
       display: none;
       position: fixed;
-      margin: 0;
-      padding: 10px 50px 20px;
-      top: 68px;
+      padding: 20px;
+      top: 0;
       left: 0;
       right: 0;
       width: 100vw;
-      height: calc(100vh - 68px);
+      height: 100vh;
+      margin: 0;
       overflow: auto;
       flex-direction: column;
       justify-content: flex-start;
       align-items: flex-start;
       flex-wrap: nowrap;
-      z-index: 5;
-      background-color: $primary-text-color;
-    }*/
+      z-index: 3;
+      background-color: $green-color-dark;
+    }
+    &--active {
+      display: flex;
+    }
   }
 
   &__item {
     margin: 0 10px;
+
+    @media screen and (max-width: 650px) {
+      width: 80%;
+
+    }
   }
 
   &__menu-link {
@@ -571,10 +589,23 @@ section {
     color: $main-color-black;
     transition: all .5s ease;
 
+
+    @media screen and (max-width: 650px) {
+      color: $main-color-white;
+      white-space: inherit;
+      text-align: left;
+      padding: 24px;
+    }
+
     &:hover,
     &:focus {
       color: $green-color-light;
       transition: all .5s ease;
+
+      @media screen and (max-width: 650px) {
+        color: $main-color-white;
+        opacity: .8;
+      }
     }
 
     &:active {
@@ -591,6 +622,10 @@ section {
       height: 4px;
       background: $green-color-light;
       transition: all .5s ease;
+
+      @media screen and (max-width: 650px) {
+        display: none;
+      }
 
       .nav__item:hover &,
       .nav__item:focus & {
@@ -649,6 +684,9 @@ section {
     }
     @media screen and (max-width: 650px) {
       margin: 10px auto;
+    }
+    @media screen and (max-width: 440px) {
+      margin: 10px;
     }
 
     &:focus,

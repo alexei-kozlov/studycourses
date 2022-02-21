@@ -1,5 +1,23 @@
 ;(function ($) {
 
+  // Мобильное меню
+  $('.nav__btn-field').on('click', function () {
+    if (window.matchMedia('(max-width: 650px)').matches) {
+      $('.nav__btn-icon').toggleClass('nav__btn-icon--active');
+      $('.nav__btn-field').toggleClass('nav__btn-field--active');
+      $('.nav__list').toggleClass('nav__list--active');
+    }
+  });
+
+  // Закрытие мобильного меню при при выборе пункта меню
+  $('.nav__item').on('click', function () {
+    if (window.matchMedia('(max-width: 650px)').matches) {
+      $('.nav__btn-icon').toggleClass('nav__btn-icon--active');
+      $('.nav__btn-field').toggleClass('nav__btn-field--active');
+      $('.nav__list').toggleClass('nav__list--active');
+    }
+  });
+
   // Появление кнопки "Вверх" после прокрутки на 100px
   $(window).scroll(function () {
     if ($(this).scrollTop() > 100) {
