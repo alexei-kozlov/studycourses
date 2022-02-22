@@ -149,6 +149,10 @@
         .closest('tr')
         .next('.table-inner')
         .fadeToggle();
+    return false;
+  });
+  $('.teacher-courses-view .table-block__body-tab').on('click', function () {
+    $(this).find('.table-block__radiobutton').trigger('click');
   });
 
   // Всплытие модального окна если форма не валидна

@@ -276,7 +276,7 @@ a {
 }
 
 section {
-  padding: 32px 0 78px;
+  padding: 50px 0 78px;
   margin: 10px 0;
   box-shadow: 0 5px 30px 0 #c4c4c4, 0 -5px 30px 0 #c4c4c4;
 }
@@ -312,7 +312,7 @@ section {
 
 .page-title {
   padding: 4px 0 2px 10px;
-  margin-bottom: 60px;
+  margin-bottom: 34px;
   font-family: Roboto, Arial, sans-serif;
   font-size: 36px;
   font-style: normal;
@@ -728,7 +728,7 @@ section {
 .nav__list {
   max-width: 918px;
   min-height: 20px;
-  margin: 25px auto;
+  margin: 6px auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -951,6 +951,32 @@ section {
   text-align: left;
   color: #004b47;
 }
+.form__label-select {
+  appearance: none;
+  position: relative;
+}
+.form__label-select::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  top: calc(50% - 4px);
+  right: 17px;
+  border-style: solid;
+  border-width: 12px 12px 0 12px;
+  border-color: #004b47 transparent transparent transparent;
+}
+.form__label-select::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  top: calc(50% - 4px + 1.5px);
+  right: calc(17px + 4px);
+  border-style: solid;
+  border-width: 8px 8px 0 8px;
+  border-color: #f9f8f8 transparent transparent transparent;
+}
 .form__select, .form__input {
   width: 100%;
   height: 48px;
@@ -973,6 +999,10 @@ section {
 }
 .form__select[disabled], .form__select option[disabled], .form__input[disabled], .form__textarea[disabled] {
   background: #c4c4c4;
+}
+.form__select {
+  appearance: none;
+  background: url("data:image/svg+xml,%3Csvg width='24' height='12' viewBox='0 0 24 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20.753 1.772L12.0432 10.0637L3.34532 1.75959L20.753 1.772Z' fill='%23F9F8F8' stroke='%23004B47' stroke-width='2'/%3E%3C/svg%3E") no-repeat right 14px center #f9f8f8;
 }
 .form__middle {
   margin: 18px auto 42px;
@@ -1109,7 +1139,7 @@ section {
 }
 
 .footer__logo {
-  margin: 26px 0;
+  margin: 25px 0;
   display: block;
   font-family: Pacifico, Arial, sans-serif;
   font-size: 36px;
@@ -1150,7 +1180,6 @@ section {
 }
 .footer__bottom-item {
   margin: 0 10px;
-  flex-grow: 1;
   text-align: center;
 }
 .footer__bottom-item:first-of-type {
@@ -1861,6 +1890,9 @@ section {
   align-self: flex-end;
 }
 
+.teacher-courses__title {
+  margin-bottom: 50px;
+}
 .teacher-courses__header {
   display: flex;
   flex-direction: row;
@@ -1875,7 +1907,7 @@ section {
 }
 .teacher-courses__create-instruction {
   display: block;
-  margin: 25px 0;
+  margin: 31px 0;
 }
 .teacher-courses__pdf-icon {
   fill: #128277;
@@ -1883,9 +1915,13 @@ section {
 }
 .teacher-courses__download-icon {
   fill: #004b47;
+  vertical-align: bottom;
+  margin-bottom: 3px;
 }
 .teacher-courses__create-text {
   margin: 0 10px;
+  color: #128277;
+  font-weight: 500;
 }
 .teacher-courses__header-right {
   font-family: Roboto, Arial, sans-serif;
@@ -1899,6 +1935,10 @@ section {
     text-align: left;
   }
 }
+.teacher-courses__filter-label {
+  display: inline-block;
+  margin-bottom: 10px;
+}
 .teacher-courses__filter-select {
   height: 18px;
   padding: 0 10px 2px;
@@ -1906,10 +1946,11 @@ section {
   border-radius: 3px;
   border-color: #128277;
   font-size: 14px;
+  text-align: center;
 }
 .teacher-courses__search-label {
   position: relative;
-  margin: 35px 0 25px;
+  margin: 31px 0 34px;
 }
 .teacher-courses__search-input {
   width: 284px;
@@ -1992,6 +2033,9 @@ section {
 .table-block__sort-icon use {
   fill: #128277;
 }
+.table-block__sort-icon:hover, .table-block__sort-icon:focus {
+  cursor: pointer;
+}
 .table-block__header tr {
   box-shadow: 0 -1px 0 0 #004b47, 0 1px 0 0 #004b47;
   white-space: nowrap;
@@ -2003,9 +2047,6 @@ section {
   color: #828282;
   padding: 18px 16px 14px;
   position: relative;
-}
-.table-block__header th:hover, .table-block__header th:focus {
-  cursor: pointer;
 }
 .table-block__body tr {
   box-shadow: 0 0 0 1px #004b47, 0 5px 50px 0 #c4c4c4;
@@ -2057,6 +2098,9 @@ section {
   }
 }
 
+.teacher-new-course__title {
+  margin-bottom: 50px;
+}
 .teacher-new-course .form__textarea-course-desc {
   margin: 0;
   padding: 10px;
@@ -2210,19 +2254,39 @@ section {
   cursor: pointer;
 }
 
+.teacher-new-module .form__btn {
+  margin: 24px 0 0;
+}
+.teacher-new-module .form__left-col {
+  padding: 0;
+}
+.teacher-new-module .form__input, .teacher-new-module .form__desc {
+  margin-bottom: 45px;
+}
+
+.teacher-new-theme__title {
+  margin-bottom: 50px;
+}
 .teacher-new-theme .form__upload {
-  margin-bottom: 28px;
+  margin-bottom: 0;
 }
 .teacher-new-theme .form__left-col, .teacher-new-theme .form__right-col {
   width: auto;
+  padding: 0;
 }
 @media screen and (max-width: 700px) {
   .teacher-new-theme .form__left-col, .teacher-new-theme .form__right-col {
     width: 100%;
   }
 }
+.teacher-new-theme .form__input, .teacher-new-theme .form__desc {
+  margin-bottom: 45px;
+}
 .teacher-new-theme .form__btn-block {
   width: 100%;
+}
+.teacher-new-theme .form__btn {
+  margin-top: 55px;
 }
 @media screen and (max-width: 700px) {
   .teacher-new-theme .form__btn {
@@ -2231,6 +2295,9 @@ section {
   }
 }
 
+.teacher-courses-view__title {
+  margin-bottom: 50px;
+}
 .teacher-courses-view .table-block {
   max-width: 100%;
   width: 100%;
@@ -2242,6 +2309,13 @@ section {
 }
 .teacher-courses-view .table-block__header th:last-of-type {
   text-align: right;
+}
+.teacher-courses-view .table-block__body-tab:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+.teacher-courses-view .table-block__body-tab:first-of-type > td {
+  color: #222121;
 }
 .teacher-courses-view .table-block__body tr {
   box-shadow: 0 0 0 1px #004b47;
@@ -2262,7 +2336,9 @@ section {
 }
 .teacher-courses-view .table-block__body td:nth-of-type(3) {
   font-weight: 500;
-  color: #128277;
+}
+.teacher-courses-view .table-block__body .table-inner td {
+  color: #004b47;
 }
 .teacher-courses-view .table-block__radiobutton {
   display: inline-block;
@@ -2291,7 +2367,7 @@ section {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
+  padding: 15px;
   margin: 40px auto;
   border: 1px solid #128277;
 }
@@ -2309,6 +2385,7 @@ section {
   padding: 0;
   font-size: 24px;
   text-align: left;
+  color: #004b47;
 }
 .teacher-courses-view .block__btn {
   margin: 0;
