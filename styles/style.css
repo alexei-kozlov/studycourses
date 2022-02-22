@@ -619,7 +619,7 @@ section {
   fill: #f9f8f8;
 }
 .header__logo {
-  margin: 34px 0;
+  margin: 25px 0;
   display: block;
   font-family: Pacifico, Arial, sans-serif;
   font-size: 36px;
@@ -728,7 +728,7 @@ section {
 .nav__list {
   max-width: 918px;
   min-height: 20px;
-  margin: 34px auto;
+  margin: 25px auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -800,6 +800,30 @@ section {
     padding: 24px;
   }
 }
+.nav__menu-link--active {
+  position: relative;
+  color: #128277;
+}
+@media screen and (max-width: 650px) {
+  .nav__menu-link--active {
+    color: #c4c4c4;
+    opacity: 0.8;
+  }
+}
+.nav__menu-link--active::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  left: 0;
+  height: 4px;
+  background: #128277;
+}
+@media screen and (max-width: 650px) {
+  .nav__menu-link--active::after {
+    display: none;
+  }
+}
 .nav__menu-link:hover, .nav__menu-link:focus {
   color: #128277;
   transition: all 0.5s ease;
@@ -860,7 +884,7 @@ section {
 .nav__button-sign {
   width: 140px;
   height: 40px;
-  margin: 34px auto;
+  margin: 25px 0;
   padding: 9px 32px;
   border-radius: 20px;
   font-family: Roboto, Arial, sans-serif;
@@ -1085,7 +1109,7 @@ section {
 }
 
 .footer__logo {
-  margin: 34px 0;
+  margin: 26px 0;
   display: block;
   font-family: Pacifico, Arial, sans-serif;
   font-size: 36px;
@@ -1128,6 +1152,18 @@ section {
   margin: 0 10px;
   flex-grow: 1;
   text-align: center;
+}
+.footer__bottom-item:first-of-type {
+  margin-left: 0;
+}
+.footer__bottom-item:last-of-type {
+  margin-right: 0;
+}
+@media screen and (max-width: 1000px) {
+  .footer__bottom-item {
+    flex-grow: 1;
+    margin: 4px;
+  }
 }
 .footer__bottom-text {
   font-family: Roboto, Arial, sans-serif;
@@ -1199,7 +1235,7 @@ section {
 .about__title {
   text-align: left;
   text-transform: none;
-  margin-bottom: 40px;
+  margin-bottom: 54px;
   padding: 0;
 }
 @media screen and (max-width: 1000px) {
@@ -1259,7 +1295,7 @@ section {
   text-align: left;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: flex-start;
 }
 @media screen and (max-width: 1200px) {
@@ -1296,14 +1332,15 @@ section {
   }
 }
 .capabilities .capability__subtitle {
+  width: 80%;
   font-size: 24px;
   font-weight: 400;
   letter-spacing: 2px;
-  color: #828282;
-  margin-top: 14px;
+  color: #4f4f4f;
 }
 @media screen and (max-width: 700px) {
   .capabilities .capability__subtitle {
+    width: 100%;
     text-align: center;
     margin-top: 0;
   }
@@ -1313,10 +1350,10 @@ section {
   font-size: 14px;
   font-weight: 700;
   letter-spacing: 0;
-  color: #828282;
+  color: #4f4f4f;
 }
 .capabilities .capability__title, .capabilities .capability__subtitle, .capabilities .capability__list {
-  margin-bottom: 30px;
+  margin-bottom: 29px;
 }
 @media screen and (max-width: 700px) {
   .capabilities .capability__title, .capabilities .capability__subtitle, .capabilities .capability__list {
@@ -1370,7 +1407,7 @@ section {
 }
 
 .courses .container {
-  margin-top: 32px;
+  margin-top: 8px;
   overflow: hidden;
 }
 @media screen and (max-width: 500px) {
@@ -1379,10 +1416,11 @@ section {
   }
 }
 .courses__all {
-  width: fit-content;
-  margin-left: auto;
+  margin: 0 auto;
+  text-align: right;
   padding: 0 16px;
   display: block;
+  max-width: 1375px;
 }
 @media screen and (max-width: 700px) {
   .courses__all {
@@ -1512,6 +1550,7 @@ section {
   flex-direction: column;
   justify-content: space-between;
   color: #828282;
+  font-weight: 700;
 }
 @media screen and (max-width: 1200px) {
   .courses .course__description {
@@ -1640,7 +1679,7 @@ section {
   }
 }
 .reviews__author, .reviews__author-pos {
-  margin-bottom: 18px;
+  margin-bottom: 10px;
 }
 .reviews__author {
   font-family: Roboto, Arial, sans-serif;

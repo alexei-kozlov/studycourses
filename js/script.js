@@ -9,8 +9,13 @@
     }
   });
 
-  // Закрытие мобильного меню при при выборе пункта меню
   $('.nav__item').on('click', function () {
+
+    // Активное состояние пункта меню после его выбора
+    $('.nav__menu-link').removeClass('nav__menu-link--active');
+    $(this).find('.nav__menu-link').addClass('nav__menu-link--active');
+
+    // Закрытие мобильного меню при выборе пункта меню
     if (window.matchMedia('(max-width: 650px)').matches) {
       $('.nav__btn-icon').toggleClass('nav__btn-icon--active');
       $('.nav__btn-field').toggleClass('nav__btn-field--active');
